@@ -1,0 +1,11 @@
+<% if @err_string.blank? %> 
+	<% if params[:payment_method] == "paypal"%>
+		window.location.href = "/payment"
+	<%else%>
+		window.location.href = "/thankyou"
+	<%end%>
+<%else%>
+	alert("<%=@err_string.html_safe %>")
+	$("#formSubButton").text('Complete Order'); 
+	$("#formSubButton").removeAttr('disabled'); 
+<%end%>

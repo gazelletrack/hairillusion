@@ -1,0 +1,7 @@
+$("#shippingStateDiv").html('<%= escape_javascript(render('shipping_state_combo' )) %>');  
+
+
+$("#billing_country").val("<%=params[:parent_region]%>")
+$("#billing_country").trigger("change");
+
+

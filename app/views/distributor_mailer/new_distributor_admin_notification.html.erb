@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wholesaler Request</title>
+
+  <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+  <style type="text/css">
+    body {
+      margin:    0 auto;
+      max-width: 550px;
+      padding: 20px 0;
+    }
+    table.gridtable {
+      width: 100%;
+      font-family: verdana,arial,sans-serif;
+      font-size:11px;
+      color:#333333;
+      border-width: 1px;
+      border-color: #666666;
+      border-collapse: collapse;
+    }
+    table.gridtable th {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #dedede;
+    }
+    table.gridtable td {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <strong>Distributor Request</strong>
+  <table class="gridtable">
+    <thead>
+      <tr>
+        <th colspan="2" width="40%"></th>
+        <th width="60%"></th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr>
+        <td colspan="3">New distributor is signed up.
+        	<br />
+        	Please approve him and set price to his products. 
+        	<br /><br />
+        	Use below link to set price: 
+        	<br />
+        	https://gethairillusion.com/distributor
+        	<br />
+        </td> 
+      </tr>
+      <tr>
+        <td colspan="2">Company Name</td>
+        <td><strong><%= @distributor.company_name %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">First Name</td>
+        <td><strong><%= @distributor.first_name %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">Last Name</td>
+        <td><strong><%= @distributor.last_name %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">Phone</td>
+        <td><strong><%= @distributor.phone %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">Email</td>
+        <td><strong><%= @distributor.email %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">Address</td>
+        <td><strong><%= @distributor.address1 %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">Address 2</td>
+        <td><strong><%= @distributor.address2 %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">City</td>
+        <td><strong><%= @distributor.city %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">State/Region/Province</td>
+        <td><strong><%= @distributor.state %></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2">Zip</td>
+        <td><strong><%= @distributor.zip %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+</body>

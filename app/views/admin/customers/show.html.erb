@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-6 well">
+    <p>
+      <strong>First Name:</strong>
+      <%= @customer.first_name %>
+    <p>
+
+    <p>
+      <strong>Last Name:</strong>
+      <%= @customer.last_name %>
+    <p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @customer.email %>
+    <p>
+
+    <p>
+      <strong>Address:</strong>
+      <br/>
+      <%= @customer.address1 %><br/>
+      <% if @customer.address2.present? %>
+        <%= @customer.address2 %><br/>
+      <% end %>
+      <%= "#{@customer.city}, #{@customer.state} #{@customer.zip} #{get_country_name(@customer.country, false)}" %>
+    <p>
+
+    <p>
+      <%= link_to icon_text('Edit', 'glyphicon glyphicon-pencil'), edit_admin_customer_path(@customer), class: 'btn btn-sm btn-primary' %>
+      <%= link_to icon_text('Past Orders', 'glyphicon glyphicon-time'), admin_customer_orders_path(@customer), class: 'btn btn-sm btn-primary' %>
+      <%= link_to icon_text('New Order', 'glyphicon glyphicon-credit-card'), new_admin_customer_order_path(@customer), class: 'btn btn-sm btn-success' %>
+    </p>
+  </div>
+</div>

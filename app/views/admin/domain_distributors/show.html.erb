@@ -1,0 +1,82 @@
+ 
+<%= link_to 'Back', admin_domain_distributors_path, :class=>"btn btn-default" %>
+<br />
+<br />
+<table class="table table-striped table-bordered table-hover table-condensed grid-table">
+	<tr>
+		<td><b>Name:</b></td>
+		<td> <%= @domain_distributor.name%> </td>
+
+		<td><b>Company:</b></td>
+		<td> <%= @domain_distributor.company_name%> </td>
+
+		<td><b>Domain Name:</b></td>
+		<td> <%= @domain_distributor.domain%> </td>
+	</tr>
+
+	<tr>
+		<td><b>Email:</b></td>
+		<td> <%= @domain_distributor.email%> </td>
+
+		<td><b>Percentage:</b></td>
+		<td> <%= @domain_distributor.percentage%> </td>
+
+		<td><b>Phone:</b></td>
+		<td> <%= @domain_distributor.phone%> </td>
+
+	</tr>
+
+	<tr>
+		<td style="vertical-align: top"><b>Address:</b></td>
+		<td colspan="3"> <%= @domain_distributor.address.html_safe %> </td>
+
+		<td ><b>State:</b></td>
+		<td> <%= @domain_distributor.state %> </td>
+	</tr>
+	
+	<tr>
+		<td style="vertical-align: top"><b>Country:</b></td>
+		<td> <%= @domain_distributor.country %> </td>
+
+		<td ><b>Zip:</b></td>
+		<td> <%= @domain_distributor.zip %> </td>
+		<td></td>
+		<td></td>
+	</tr> 
+</table>
+
+<h3> Orders from <%= @domain_distributor.domain %></h3> 
+
+<%= form_for :search, :url => { :controller=>'admin/domain_distributors', :action => 'filter_report' }, html: {class: 'form form-horizontal', style:'margin:0px;left:0px;' }, :method => :post, :remote=>true do |f|%>
+<div class="well" style="width: 100%"> 
+	<%= hidden_field_tag :domain_distributor_id, @domain_distributor.id %>
+	<table align="center" class="quick_search_table" >
+		<tr> 
+ 			<td style="width: 55px;padding-left: 5px"> Start: </td>
+			<td style="width: 140px"> <%= f.text_field :start_date, :value => DateTime.now.to_date.strftime('%d/%m/%Y'), :class => "datepicker",:readonly=>true %> </td>
+			<td style="width: 55px;padding-left: 5px"> End: </td>
+			<td style="width: 140px"> <%= f.text_field :end_date, :value => DateTime.now.to_date.strftime('%d/%m/%Y'), :class => "datepicker",:readonly=>true %> </td>		
+			<td style="width: 100%;padding-left: 50px"> <%= f.submit "Filter", :class=>"btn btn-primary", "data-disable-with"=>"Wait..." %> </td>
+			<td> <%= link_to "Download as Xlsx", "#", :onclick=>"onDowloadReport()", :class=>"btn btn-success"%></td>			
+		</tr>
+	</table>
+</div>
+<%end%>  
+
+<div id="reports_list_div">
+	<%= render :partial => "orders_list", :locals => {:distributor_orders => @distributor_orders } %> 
+</div>  
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('.datepicker').datepicker({format: 'dd/mm/yyyy',"autoclose" : true});
+  });
+  
+  function onDowloadReport()
+  {  
+	params = "start_date="+$("#search_start_date").val()+"&end_date="+$("#search_end_date").val()+"&distributor_id="+$("#domain_distributor_id").val();		
+	window.location.href = '<%=download_report_admin_domain_distributors_path%>'+"?"+params; 
+  }
+</script>
+  	 

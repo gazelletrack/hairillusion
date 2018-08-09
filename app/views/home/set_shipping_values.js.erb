@@ -1,0 +1,8 @@
+$("#shippingPriceTD").html(" <%= escape_javascript( render 'shipping_price') %>");    
+$("#totalPriceTD").html(" <%= escape_javascript( render 'total_price') %>");  
+
+$("#shipment_name").val("<%=session[:country_shipping_code]%>");   
+
+$("#shipment_car").val("<%=session[:country_shipping_code]%>");   
+$("#shipping_amount").val("<%=session[:shipping_price]%>");   
+

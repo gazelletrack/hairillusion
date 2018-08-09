@@ -1,0 +1,26 @@
+<div class="col-md-12" style="vertical-align: middle;min-height: 300px;background-color: #fff;padding-top: 10%;text-align: center">
+	<h4>Please wait..Processing...</h4> 
+</div>
+ 
+<form id="payPalForm" style="display:none;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	<input type="hidden" name="cmd" value="_xclick" />
+	<input type="hidden" name="business" value="ronnie@hairillusion.com" />
+	<input type="hidden" id="qnty" name="quantity" value="1" />
+	<input type="hidden" name="item_name" value="Hairillusion LLC" /> 
+	<input type="hidden" name="item_number" value="<%= @order.id%>" />
+	<input type="hidden" id="amount"  name="amount" value="<%= session[:total_price].to_f %>" />
+	<input type="hidden" name="shipping" value="0.00" />
+	<input type="hidden" name="no_shipping" value="1" />
+	<input type="hidden" value="2" name="rm"> 
+	<input type="hidden" name="cn" value="Comments" />
+	<input type="hidden" name="currency_code" value="USD" />
+	<input type="hidden" name="lc" value="US" />
+	<input type="hidden" name="bn" value="PP-BuyNowBF" />
+	<input type="hidden" name="return" value="https://hairillusion.com/order_confirmation" />
+</form> 
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('#payPalForm').submit();
+})
+</script>

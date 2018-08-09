@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hair Illusion Admin</title>
+  <%= stylesheet_link_tag "admin", media: "all" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %> 
+</head>
+<body>
+  <a class="sr-only" href="#content">Skip to main content</a>
+  <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation">
+        <ul class="nav navbar-nav" style="margin-top: 10px">
+          <li><%= link_to 'Customers', admin_customers_path %></li>
+          <li><%= link_to 'Distributors', admin_distributors_path %></li>
+          <li><%= link_to 'Orders', admin_orders_path %></li>
+          <li><%= link_to 'Shipments', admin_shipments_path %></li>
+          <li><%= link_to 'Domain Distributors', '/admin/domain_distributors' %></li>   
+          <li><%= link_to 'Distributors orders', distributor_orders_admin_orders_path %></li> 
+          <li><%= link_to 'Forums', admin_forums_path %></li>   
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= flash_message %>
+
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<% if @forums.size > 0 %>
+	$("#forumList").html("<%= escape_javascript(render('forum_list', :locals => {:forums => @forums } )) %>")
+<%else%>
+	$("#forumList").html("<%= escape_javascript(render('no_matches')) %>")
+<%end%>

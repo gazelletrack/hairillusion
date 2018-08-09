@@ -1,0 +1,36 @@
+<h2 class="title-text text-center">Color Selection</h2>
+
+<div class="row row-padding-20">
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <h3 class="title-text">AVAILABLE COLORS</h3>
+        <div class="order-colors" id="order-colors">
+          <div class="colorpicker" style="background:url('<%= image_path("DarkBrownPhoto.jpg") %>'); border: 6px solid #ffffff;">
+            <%= image_tag 'haircolor.png', id: 'g', width: 258, height: 188 %>
+            <div class="colorbox">
+              <div class="color" style="background:url('<%= image_path("JetBlackThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("JetBlackPhoto.jpg") %>\')');" title="Jet Black">&nbsp;</div>
+              <div class="color" style="background:url('<%= image_path("BlackThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("BlackPhoto.jpg") %>\')');" title="Black">&nbsp;</div>
+              <div class="color" style="background:url('<%= image_path("DarkBrownThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("DarkBrownPhoto.jpg") %>\')');" title="Dark Brown">&nbsp;</div>
+              <div class="color" style="background:url('<%= image_path("BrownThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("BrownPhoto.jpg") %>\')');" title="Brown">&nbsp;</div>
+              <div class="color" style="background:url('<%= image_path("LightBrownThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("LightBrownPhoto.jpg") %>\')');" title=Light Brown">&nbsp;</div>
+              <div class="color" style="background:url('<%= image_path("RedThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("RedPhoto.jpg") %>\')');" title="Auburn">&nbsp;</div>
+
+              <div class="color" style="background:url('<%= image_path("PlatinumBlondeThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("PlatinumBlondePhoto.jpg") %>\')');" title="Light Blonde">&nbsp;</div>
+			  <div class="color" style="background:url('<%= image_path("DarkPlatinumBlondeThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("DarkPlatinumBlondePhoto.jpg") %>\')');" title="Blonde">&nbsp;</div>
+
+             </div>
+          </div>
+      <p>Browse available colors by clicking the color tile.</p>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <h3 class="title-text">HOW TO PICK YOUR COLOR</h3>
+    <p>&nbsp;</p>
+    <ul class="arrow">
+      <li>If you dye your hair one color, match that color.</li>
+      <li>If you have highlighted ends with darker roots, match the root color.</li>
+      <li>If your hair color falls between shades or if your hair is turning grey, you can blend colors.</li>
+    </ul>
+  </div>
+  <div class="col-md-1"></div>
+</div>

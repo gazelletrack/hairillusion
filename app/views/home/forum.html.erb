@@ -1,0 +1,32 @@
+<h5 class="title-text text-center"> <%= link_to "Salons & Barbers post your store location.", new_forum_path, :class=>"btn btn-danger" %> </h5> 
+ <br />
+<h4 class="title-text text-center">Search for Salons & Barbers in your state who carry Hair Illusion</h4> 
+<div class="section" style="border: solid;border-width: 1px;padding: 10px;border-color: #ccc">
+	<%= form_for :search, url: get_forums_path, html: { class: 'form-horizontal' }, :remote=>true do |f| %>
+	<table>
+		<tr>
+			<td style="padding: 10px">Country:</td>
+			<td style="padding: 10px">
+				<%= f.country_select :country,{ :default => 'United States', selected: 'US'}, { class: 'form-control required', :onchange=>"onChangeCounty()" } %></td>
+			<td style="padding: 10px">State:</td>
+			<td style="padding: 10px" id="state_td">
+				<%= render partial: 'subregion_select', locals: {parent_region: 'US' } %>
+			</td>
+			<td style="padding: 10px"><%= f.submit "Search", :class=>"btn btn-primary"%></td> 
+		</tr>
+	</table>
+	<%end%>
+</div>
+<ul class="list-group" style="background-color: #eee"> 
+	<div id="forumList">
+		<%= render "forum_list", :forums=>@forums %> 
+	</div>
+</ul>
+<br />  
+
+<script type="text/javascript"> 
+  $(document).ready(function(){
+	$('.ckeditor').ckeditor({ 
+	});
+  }); 
+</script>

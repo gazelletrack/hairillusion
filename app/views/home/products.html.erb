@@ -1,0 +1,747 @@
+
+<div class="contains">
+	<div class="container">
+		<h3 class="text-uppercase text-center">Products</h3>
+		<div class="row hi-products">
+
+
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(44.95, @price) %>% OFF</div>
+					<div class="thumb">
+						<img src="/assets/hi products/IMG_3666.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+					<a href="/product_details?type=large" class="btn hi-btn btn-details">View Details</a>
+					<% end %>
+					<div class="caption">
+						<h4 class="title">Large 38g</h4>
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $44.95</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= @price %></label></h5>  
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_large_product_col_dp">
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="color">Color:</label>
+								<input type="hidden" value="large" name="product_type"/>
+								<select class="form-control" id="large_product_col_dp" name="color">
+									<option>Select a color</option>
+									<option>Black</option>
+									<option>Jet Black</option> 
+									<option>Dark Brown</option>
+									<option>Brown</option>
+									<option>Light Brown</option>
+									<option>Auburn</option>
+									<option>Blonde</option>
+									<option>Light Blonde</option>
+								</select>
+							</div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="big_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('large_product_col_dp',event, document.getElementById('big_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div>
+			
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(29.95, @small_price) %>% OFF</div>
+					<div class="thumb">
+						<img src="/assets/18g_prod.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+						<a href="/product_details?type=small" class="btn hi-btn btn-details">View Details</a>
+					<% end %>
+					<div class="caption">
+						<h4 class="title">Small 18g</h4> 
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $29.95</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= @small_price %></label></h5>  
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_small_product_col_dp">
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="color">Color:</label>
+								<input type="hidden" value="small" name="product_type"/>
+								<select class="form-control" id="small_product_col_dp" name="color">
+									<option>Select a color</option>
+									<option>Black</option> 
+									<option>Jet Black</option> 
+									<option>Dark Brown</option>
+									<option>Brown</option>
+									<option>Light Brown</option>
+									<option>Auburn</option>
+									<option>Blonde</option>
+									<option>Light Blonde</option>
+								</select>
+							</div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="small_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+							</div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" id="smallButtonCart" onclick="onClickAddToCart('small_product_col_dp',event, document.getElementById('small_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(28.95, @small_6g_price) %>% OFF</div>
+					<div class="thumb">
+						<img src="/assets/6g_small.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+						<a href="/product_details?type=small_6g" class="btn hi-btn btn-details">View Details</a>
+					<% end %>
+					<div class="caption">
+						<h4 class="title">Black 6g</h4> 
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $28.95</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= @small_6g_price %></label></h5>  
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_small_6g_product_col_dp">
+						<div class="row">
+							<div class="col-sm-5"> 
+								<input type="hidden" name="product_type" value="Black 6g">  
+							</div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="small_6g_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+							</div>
+						</div>
+						 
+						<button type="submit" class="btn btn-addtocart form-control" role="button" id="smallButtonCart" onclick="onClickAddToCart('small_6g_product_col_dp',event, document.getElementById('small_6g_qty').value)">
+							Add to cart
+						</button> 
+					</form>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(19.95, @spray.price.to_f/100) %>% OFF</div>
+					<div  style="height: 309px">
+						<img src="/assets/spray.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+					<a href="/product_details?type=spray" class="btn hi-btn btn-details">View Details</a> 
+					<% end %>
+					<div style="height: 105px;text-align: center;padding: 0px;">
+						<h4 class="title">Hair Fiber Spray</h4>
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $19.95</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= @spray.price.to_f/100 %></label></h5>  
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_spray">
+						<div class="row">
+							<div class="col-sm-5"></div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<input type="hidden" value="Hair Illusion Fiber Hold Spray" name="product_type"/>
+								<select class="form-control" name="quantity" id="spray_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+							<div class="col-sm-4"></div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('spray',event, document.getElementById('spray_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div>
+ 
+
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(39.95, @wr.price.to_f/100) %>% OFF</div>
+					<div class="thumb">
+						<img src="/assets/resistant_prod.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+					<a href="/product_details?type=wr" class="btn hi-btn btn-details">View Details</a>  
+					<% end %>
+					<div class="caption">
+						<h4 class="title">Water Resistant Spray</h4>
+						<h5 class="price"><label class="value">$ <%= @wr.price.to_f/100 %></label></h5> 
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_wr">
+						<div class="row">
+							<div class="col-sm-5"></div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<input type="hidden" value="Water Resistant Spray" name="product_type"/>
+								<select class="form-control" name="quantity" id="swo_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+							<div class="col-sm-4"></div>
+						</div>
+					 	<button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('wr',event, document.getElementById('water_qty').value)">
+							Add to cart
+						</button>  
+						<!-- <p style="width:100%;text-align:center; font-weight: bold;height: 71px;font-size: 20px">Out of Stock</p>-->
+						
+					</form>
+				</div>
+			</div>
+			
+			
+	
+	<div class="col-sm-3"> 
+				<div class="thumbnail product-thumb"> 					
+					<div class="price-ribbon"><%= get_percentage(44.95, @applicator_price) %>% OFF</div> 
+					<div class="thumb">
+						<img src="/assets/applicator.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+					<a href="/product_details?type=applicator" class="btn hi-btn btn-details">View Details</a>  
+					<% end %>
+					<div class="caption">
+						<h4 class="title">Spray Applicator</h4>
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $44.95</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= number_with_precision(@applicator_price, :precision => 2) %></label></h5>   
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_laser">
+						<div class="row"> 
+							<input type="hidden" name="product_type" value="Spray Applicator"> 
+							<div class="col-sm-5"></div>
+							
+							<div class="col-sm-3 quantity" > 
+								 
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="applicator_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>   
+							</div>
+							<div class="col-sm-4"></div>
+						</div> 
+						<button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('applicator',event,document.getElementById('applicator_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div>
+					
+			
+			
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(700, @laser.price.to_f/100) %>% OFF</div>
+					<div class="thumb">
+						<img src="/assets/laser_prod.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+					<a href="/product_details?type=laser" class="btn hi-btn btn-details">View Details</a>  
+					<% end %>
+					<div class="caption">
+						<h4 class="title">Laser Comb</h4>
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $700.00</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= number_with_precision(@laser.price.to_f/100, :precision => 2) %></label></h5>   
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_laser">
+						<div class="row">
+							<input type="hidden" value="laser" name="product_type"/>
+							<div class="col-sm-5"></div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="laser_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+							<div class="col-sm-4"></div>
+						</div> 
+						<h4 style="text-align: center">Out of stock</h4> 
+						<!--
+						<button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('laser',event, document.getElementById('laser_qty').value)">
+							Add to cart
+						</button> --> 
+					</form>
+				</div>
+			</div>
+			
+			
+			
+			
+
+ <div class="col-sm-3">
+            <div class="thumbnail product-thumb">
+              <div class="price-ribbon"><%= get_percentage(86.85, @price_combo) %>% OFF</div>
+              <div class="thumb">
+                <img src="/assets/combo_prod.jpg" class="img-responsive center-block">
+              </div>
+              <% unless @iphone %>
+              <a href="/product_details?type=combo" class="btn hi-btn btn-details">View Details</a>
+              <% end %>
+              <div class="caption" style="margin-top: -7px">
+                <h5 class="title">One 38g bottle</h5>  
+                <h5 class="title">One Fiber Hold Spray</h5>  
+                <h5 class="title">One Optimizer</h5> 
+                <h5 class="price text-center">  $<%= number_with_precision(@price_combo, :precision => 2) %> (save $<%= number_with_precision( (86.85-@price_combo), :precision => 2) %>)</h5>              
+                 
+              </div>
+              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_combo_col_dp">
+              	<input type="hidden" value="combo" name="product_type"/>
+                  <select class="form-control" id="combo_col_dp" name="color">
+                    <option>Select a color</option>
+                    <option>Jet Black</option>
+                    <option>Black</option>
+                    <option>Dark Brown</option>
+                    <option>Brown</option>
+                    <option>Light Brown</option>
+                    <option>Auburn</option>
+                    <option>Blonde</option>
+                    <option>Light Blonde</option>
+                  </select> 
+                  <button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('combo_col_dp',event,1)">
+					Add to cart
+				  </button>
+                </form>
+            </div>
+          </div>
+          
+			
+			<div class="col-sm-3">
+            <div class="thumbnail product-thumb">
+              <div class="price-ribbon"><%= get_percentage(119.9, @price_2x) %>% OFF</div>
+              <div class="thumb">
+                <img src="/assets/v2_prod.png" class="img-responsive center-block">
+              </div>
+              <% unless @iphone %>
+              <a href="/product_details?type=c2" class="btn hi-btn btn-details">View Details</a>
+              <% end %>
+              <div class="caption"> 
+              	<br />
+                <h5 class="title">Two 38g bottles</h5>  
+                
+                <h5 class="price text-center">$<%= number_with_precision(@price_2x, :precision => 2) %> (save $<%= number_with_precision( (119.9-@price_2x), :precision => 2) %>)</h5>
+                
+              </div>
+              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c2_col_dp">
+              		<input type="hidden" value="c2" name="product_type"/>
+                  <select class="form-control" id="c2_col_dp" name="color">
+                    <option>Select a color</option>
+                    <option>Jet Black</option>
+                    <option>Black</option>
+                    <option>Dark Brown</option>
+                    <option>Brown</option>
+                    <option>Light Brown</option>
+                    <option>Auburn</option>
+                    <option>Blonde</option>
+                    <option>Light Blonde</option>
+                  </select>
+                  <button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c2_col_dp',event,1)">
+					Add to cart
+				  </button>
+                </form>
+            </div>
+          </div>
+          
+          
+			<div class="col-sm-3">
+            <div class="thumbnail product-thumb">
+              <div class="price-ribbon"><%= get_percentage(179.85, @price_3x) %>% OFF</div>
+              <div class="thumb">
+                <img src="/assets/v3_prod.png" class="img-responsive center-block">
+              </div>
+              <% unless @iphone %>
+              <a href="/product_details?type=c3" class="btn hi-btn btn-details">View Details</a>
+              <% end %>
+              <div class="caption">
+              	<br />
+                <h5 class="title">Three 38g bottles</h5>  
+                <h5 class="price text-center">$<%= number_with_precision(@price_3x, :precision => 2) %> (save $<%= number_with_precision( (179.85-@price_3x), :precision => 2) %>)</h5>
+               </div>
+              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c3_col_dp">
+              		<input type="hidden" value="c3" name="product_type"/>
+                  <select class="form-control" id="c3_col_dp" name="color">
+                    <option>Select a color</option>
+                    <option>Jet Black</option>
+                    <option>Black</option>
+                    <option>Dark Brown</option>
+                    <option>Brown</option>
+                    <option>Light Brown</option>
+                    <option>Auburn</option>
+                    <option>Blonde</option>
+                    <option>Light Blonde</option>
+                  </select>
+                  <button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c3_col_dp',event,1)">
+					Add to cart
+				  </button>
+                </form>
+            </div>
+          </div>
+          
+			<div class="col-sm-3  ">
+            <div class="thumbnail product-thumb">
+              <div class="price-ribbon"><%= get_percentage(239.8, @price_4x) %>% OFF</div>
+              <div class="thumb">
+                <img src="/assets/v4_prod.jpg" class="img-responsive center-block">
+              </div>
+              <% unless @iphone %>
+              <a href="/product_details?type=c4" class="btn hi-btn btn-details">View Details</a>
+              <% end %>
+              <div class="caption">
+              	<br />
+                <h5 class="title">Four 38g bottles</h5>   
+                <h5 class="price text-center">$<%= number_with_precision(@price_4x, :precision => 2) %> (save $<%= number_with_precision( (239.8-@price_4x), :precision => 2) %>)</h5>              
+                
+              </div>
+              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c4_col_dp">
+              	<input type="hidden" value="c4" name="product_type"/>
+                  <select class="form-control" id="c4_col_dp" name="color">
+                    <option>Select a color</option>
+                    <option>Jet Black</option>
+                    <option>Black</option>
+                    <option>Dark Brown</option>
+                    <option>Brown</option>
+                    <option>Light Brown</option>
+                    <option>Auburn</option>
+                    <option>Blonde</option>
+                    <option>Light Blonde</option>
+                  </select> 
+                  <button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c4_col_dp',event,1)">
+					Add to cart
+				  </button>
+                </form>
+            </div>
+          </div>
+          
+          
+          <div class="col-sm-3">
+            <div class="thumbnail product-thumb">
+              <div class="price-ribbon"><%= get_percentage(299.75, @price_5x) %>% OFF</div>
+              <div class="thumb">
+                <img src="/assets/v5_prod.png" class="img-responsive center-block">
+              </div>
+              <% unless @iphone %>
+              <a href="/product_details?type=c5" class="btn hi-btn btn-details">View Details</a>
+              <% end %>
+              <div class="caption">
+                <br />
+                <h5 class="title">Five 38g bottles</h5>  
+                <h5 class="price text-center">$<%= number_with_precision(@price_5x, :precision => 2) %> (save $<%= number_with_precision( (299.75-@price_5x), :precision => 2) %>)</h5>              
+              </div>
+              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c5_col_dp">
+              	<input type="hidden" value="c5" name="product_type"/>
+                  <select class="form-control" id="c5_col_dp" name="color">
+                    <option>Select a color</option>
+                    <option>Jet Black</option>
+                    <option>Black</option>
+                    <option>Dark Brown</option>
+                    <option>Brown</option>
+                    <option>Light Brown</option>
+                    <option>Auburn</option>
+                    <option>Blonde</option>
+                    <option>Light Blonde</option>
+                  </select> 
+                  <button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c5_col_dp',event,1)">
+					Add to cart
+				  </button>
+                </form>
+            </div>
+          </div> 
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(29.95, @mirror.price.to_f/100) %>% OFF</div>
+					<div class="thumb">
+						<img src="/assets/mrr.jpg" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+					<a href="/product_details?type=mirror" class="btn hi-btn btn-details">View Details</a> 
+					<% end %> 
+					<div style="text-align: center;padding-bottom: 55px">
+						<h4 class="title">Mirror</h4>
+						<h5 class="price"><label class="value">$<%= @mirror.price.to_f/100 %></label></h5> 
+					</div>
+					
+					
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_mirror">
+						<div class="row">
+							<input type="hidden" value="Mirror" name="product_type"/>
+							<div class="col-sm-5"></div>
+							<div class="col-sm-4 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="mirror_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+							<div class="col-sm-4"></div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('mirror',event, document.getElementById('mirror_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div>
+			
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(9.95, @optimizer.price.to_f/100) %>% OFF</div>
+					<div class="thumb">
+						<img src="/assets/optimizer.png" class="img-responsive center-block">
+					</div>
+					<% unless @iphone %>
+					<a href="/product_details?type=optimizer" class="btn hi-btn btn-details">View Details</a> 
+					<% end %>
+					<div class="caption">
+						<h4 class="title">Optimizer</h4>
+						<h5 class="price"><label class="value">$<%= @optimizer.price.to_f/100 %></label></h5> 
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_optimizer">
+						<div class="row">
+							<input type="hidden" value="Optimizer" name="product_type"/>
+							<div class="col-sm-5"></div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="opti_quantity"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+							<div class="col-sm-4"></div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('optimizer',event, document.getElementById('opti_quantity').value)">
+							Add to cart
+						</button> 
+					</form>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(66.90, @price_swo) %>% OFF</div>
+					<div style="height: 293px">
+						<img src="/assets/swo.jpg" class="img-responsive center-block">
+					</div>
+
+					<div class="caption">
+						<h5 class="title">Spray, Optimizer</h5>  
+						<h5 class="title">Water resistant</h5>  
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $66.90</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= @price_swo %></label></h5>  
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_swo_product_col_dp">
+						<div class="row">
+							<div class="col-sm-5"></div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<input type="hidden" value="swo" name="product_type"/>
+								<select class="form-control" name="quantity" id="swo_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+							<div class="col-sm-4"></div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" id="smallButtonCart" onclick="onClickAddToCart('swo_product_col_dp',event, document.getElementById('swo_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div> 
+			<div class="col-sm-3">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(120.90, @price_saf) %>% OFF</div>
+					<div style="height: 300px">
+						<br />
+						<br />
+						<br />
+						<img src="/assets/applicator_combo.jpg" class="img-responsive center-block">
+					</div>
+
+					<div class="caption">
+						<h5 class="title">Spray, 38g Fiber,Applicator</h5>   
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $120.90</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= @price_saf %></label></h5>  
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="saf_product_col_dp">
+						<input type="hidden" value="saf" name="product_type"/>
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="color">Color:</label> 
+								<select class="form-control" id="saf_col_dp" name="color">
+									<option>Select a color</option>
+									<option>Jet Black</option>
+									<option>Black</option>
+									<option>Dark Brown</option>
+									<option>Brown</option>
+									<option>Light Brown</option>
+									<option>Auburn</option>
+									<option>Blonde</option>
+									<option>Light Blonde</option>
+								</select>
+							</div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="saf_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" id="smallButtonCart" onclick="onClickAddToCart('saf_col_dp',event, document.getElementById('saf_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-6">
+				<div class="thumbnail product-thumb">
+					<div class="price-ribbon"><%= get_percentage(126.85, @price_swof) %>% OFF</div>
+					<div>
+						<img src="/assets/swof.jpg" class="img-responsive center-block">
+					</div> 
+					<div class="caption">
+						<h4 class="title">Spray, Water resistant, Optimizer, 38g Fiber</h4> 
+						<h5 class="price" style="height: 21px"><label class="value">Regularly: $126.85</label></h5> 
+						<h5 class="price" style="height: 21px"><label class="value">Today: $<%= @price_swof %></label></h5>  
+					</div>
+					<form method="POST" class="thumb-footer" action="/add_cart" id="form_swof_col_dp">
+						<input type="hidden" value="swof" name="product_type"/>
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="color">Color:</label> 
+								<select class="form-control" id="swof_col_dp" name="color">
+									<option>Select a color</option>
+									<option>Jet Black</option>
+									<option>Black</option>
+									<option>Dark Brown</option>
+									<option>Brown</option>
+									<option>Light Brown</option>
+									<option>Auburn</option>
+									<option>Blonde</option>
+									<option>Light Blonde</option>
+								</select>
+							</div>
+							<div class="col-sm-3 quantity" >
+								<label>Qty:</label>
+								<select class="form-control" name="quantity" id="swof_qty"> 
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+							</div>
+						</div>
+						<button type="submit" class="btn btn-addtocart form-control" role="button" id="smallButtonCart" onclick="onClickAddToCart('swof_col_dp',event, document.getElementById('swof_qty').value)">
+							Add to cart
+						</button>
+					</form>
+				</div>
+			</div> 
+		</div>
+	</div>
+</div>

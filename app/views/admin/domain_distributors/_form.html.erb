@@ -1,0 +1,83 @@
+<style>
+	.add_table td {
+		padding: 3px
+	}
+</style>
+
+<%= form_for @domain_distributor, url: @domain_distributor.new_record? ? admin_domain_distributors_path : admin_domain_distributor_path(@domain_distributor), html: { class: 'form-horizontal' } do |f| %>
+
+<% if @domain_distributor.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@domain_distributor.errors.count, "error") %> prohibited this admin_domain_distributor from being saved:</h2>
+
+	<ul>
+		<% @domain_distributor.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<table class="add_table">
+	<tr>
+		<td><b>Name:</b></td>
+		<td> <%= f.text_field :name, :required=>true %> </td>
+
+		<td><b>Company:</b></td>
+		<td> <%= f.text_field :company_name, :required=>true %> </td>
+
+		<td><b>Domain Name:</b></td>
+		<td> <%= f.text_field :domain, :required=>true %> </td>
+	</tr>
+
+	<tr>
+		<td><b>Email:</b></td>
+		<td> <%= f.email_field :email, :required=>true %> </td>
+
+		<td><b>Percentage:</b></td>
+		<td> <%= f.number_field :percentage, :required=>true %> </td>
+
+		<td><b>Phone:</b></td>
+		<td> <%= f.text_field :phone, :required=>true %> </td>
+
+	</tr>
+
+	<tr>
+		<td style="vertical-align: top"><b>Address:</b></td>
+		<td colspan="2"> <%= f.text_area :address, :style=>"width:300px;height:100px;" %> </td>
+
+		<td style="vertical-align: top" colspan="2">
+		<div>
+			<div>
+				<b>State:</b>
+				<%= f.text_field :state, :required=>true %>
+			</div>
+			<br />
+			<div>
+				<b>Country:</b>
+				<%= f.text_field :country, :required=>true, :style=>"display:inline-block" %>
+			</div>
+
+		</div></td>
+	</tr>
+
+	<tr>
+
+		<td><b>Zip:</b></td>
+		<td> <%= f.text_field :zip, :required=>true %> </td>
+
+	</tr>
+
+</table>
+
+<br />
+<div class="actions">
+	<%= f.submit "Save", :class=>"btn btn-primary" %>
+	<%= link_to 'Back', admin_domain_distributors_path, :class=>"btn btn-default" %>
+</div>
+<br />
+<br />
+<br />
+<% end %>

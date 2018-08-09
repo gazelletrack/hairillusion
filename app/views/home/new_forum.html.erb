@@ -1,0 +1,40 @@
+<h4> Fill the below form and submit, Once admin approves your post will be listed in website.</h4>
+<br />
+<% if @forum.errors.any? %>
+<div class="alert alert-danger">
+	<h4>Following error prohibited from being posted.</h4> 
+	<ul>
+		<% @forum.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="col-md-10">
+<%= form_for @forum, url: save_forum_path(@forum), html: { class: 'form-horizontal' } do |f| %> 
+	<%= control_group(@forum, :name, label: 'Your Name:', class:'col-md-2 control-label') do %>
+    	<%= f.text_field :name, { class: 'form-control required' } %>
+	<% end %> 
+	
+ 	<%= control_group(@forum, :address, label: 'Address:') do %>
+    	<%= f.text_area :address,{ class: 'form-control required' } %>
+	<% end %> 
+	
+ 	<%= control_group(@forum, :country, label: 'Country:') do %> 
+    	<%= f.country_select :country, { :default => 'United States', selected: 'US'}, { class: 'form-control required', :onchange=>"onChangeCounty('forum_country')" } %>		
+	<% end %> 
+          
+    <%= control_group(@forum, :state, label: 'State/Region/Province:') do %>
+    	<div id="state_td">
+    		<%= render partial: 'subregion_select', locals: {parent_region: 'US' } %>
+    	</div>
+    <% end %>
+    
+    <%= f.text_area :content, :required=>true, :style=>"width:300px;height:300px", :class => 'ckeditor' %>
+ 	<br />   
+    <%= f.submit 'Submit', class: 'btn btn-sm btn-success' %>
+    <%= link_to 'Cancel', forum_path, class: 'btn btn-sm btn-danger' %>
+  <% end %> 
+</div>

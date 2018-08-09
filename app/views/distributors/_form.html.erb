@@ -1,0 +1,73 @@
+<div class="col-md-6 checkoutForm" style="color: #fff;padding-left: 40px;">
+  <a class="none" id="buynow">&nbsp;</a>
+  <h2>Wholesaler Request Form</h2>
+
+  <%= form_for @distributor, url: distributors_path, method: @distributor.new_record? ? :post : :put, html: { class: 'form-horizontal' } do |f| %>
+    <div class="contact_info">
+      <%= control_group(@distributor, :company_name, label: 'Company') do %>
+        <%= f.text_field :company_name, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :first_name, label: 'First Name') do %>
+        <%= f.text_field :first_name, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :last_name, label: 'Last Name') do %>
+        <%= f.text_field :last_name, class: 'form-control required' %>
+      <% end %>
+	  
+	  <%= control_group(@distributor, :last_name, label: 'Tax ID') do %>
+        <%= f.text_field :tax_info, class: 'form-control required' %>
+      <% end %>
+      
+      <%= control_group(@distributor, :email, label: 'Email') do %>
+        <%= f.email_field :email, class: 'form-control required' %>
+      <% end %>
+
+      <% unless @distributor.new_record? %>
+        <%= control_group(@distributor, :password, label: 'Password') do %>
+          <%= f.password_field :password, class: 'form-control required' %>
+        <% end %>
+
+        <%= control_group(@distributor, :password_confirmation, label: 'Password Confirmation') do %>
+          <%= f.password_field :password_confirmation, class: 'form-control required' %>
+        <% end %>
+      <% end %>
+
+      <%= control_group(@distributor, :phone, label: 'Phone') do %>
+        <%= f.phone_field :phone, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :address1, label: 'Address') do %>
+        <%= f.text_field :address1, class: 'form-control' %>
+      <% end %>
+
+      <%= control_group(@distributor, :address2, label: 'Address 2') do %>
+        <%= f.text_field :address2, class: 'form-control' %>
+      <% end %>
+
+      <%= control_group(@distributor, :city, label: 'City') do %>
+        <%= f.text_field :city, class: 'form-control' %>
+      <% end %>
+      
+      <%= control_group(@distributor, :country, label: 'Country') do %>
+        <%= f.country_select :country, {selected: 'US'}, { class: 'form-control required' } %>
+      <% end %> 
+      
+      <%= control_group(@distributor, :state, label: 'State/Region/Province') do %> 
+        <%= render partial: 'subregion_select', locals: {parent_region: 'US'} %>
+      <% end %>
+
+      <%= control_group(@distributor, :zip, label: 'Postal/Zip Code') do %>
+        <%= f.text_field :zip, class: 'form-control' %>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <div style="text-align:center;" class="col-md-12">
+      	<%= f.submit "Register", :class=>"btn btn-info", "data-disabled-with"=>"Processing..." %>  
+        <div id="distributor-submit-spinner" style="display:none"><h4>Please Wait <%= image_tag 'ajax-loader.gif' %></h4></div>
+      </div>
+    </div>
+  <% end %>
+</div>

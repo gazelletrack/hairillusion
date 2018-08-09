@@ -1,0 +1,18 @@
+
+<% if params[:payer_status] == "verified" %>
+
+<div style="width: 100%;text-align: center;color:#fff;padding:20px;">
+
+<h4> Thank you for your order.</h4>
+
+<h4> Please check your email for confirmation email.</h4>
+
+<br />
+ 
+<%= link_to "Home", "/", :class=>"ordnwbtn" %>
+
+</div>
+
+<%else %>
+  <h3>Something went wrong..Please contact admin if your money deducted.</h3>
+<%end %>

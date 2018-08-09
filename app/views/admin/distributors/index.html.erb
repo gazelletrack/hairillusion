@@ -1,0 +1,40 @@
+<table class="table table-striped table-bordered table-hover table-condensed grid-table" data-url="<%= admin_distributors_path %>">
+  <thead>
+    <tr>
+      <th data-field="company_name" data-sort="true" data-default-sort="asc">Company</th>
+      <th data-field="city" data-sort="true">City</th>
+      <th data-field="state" data-sort="true">State</th>
+      <th data-field="price" data-sort="true">Price</th>
+      <th data-field="created_at" data-sort="true">Created</th>
+      <th>Approved</th>
+      <th><%= link_to icon_text('New Distributor', 'glyphicon glyphicon-plus'), new_admin_distributor_path, class: 'btn btn-sm btn-primary' %></th>
+    </tr>
+    <tr class="filters">
+      <th class="filter">
+        <%= text_field_tag :filter_company_name, nil, 'data-field' => 'company_name', class: 'row-filter' %>
+      </th>
+      <th class="filter">
+        <%= text_field_tag :filter_city, nil, 'data-field' => 'city', class: 'row-filter', size: 10 %>
+      </th>
+      <th class="filter">
+        <%= text_field_tag :filter_state, nil, 'data-field' => 'state', class: 'row-filter', size: 10 %>
+      </th>
+      <th class="filter">
+        <%= text_field_tag :filter_price, nil, 'data-field' => 'price', class: 'row-filter', size: 10 %>
+      </th>
+      <th class="filter">
+        <%= text_field_tag :filter_created_at, nil, 'data-field' => 'created_at', class: 'row-filter' %>
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  <tfoot>
+    <tr>
+      <th colspan="7">
+        <%= render 'admin/shared/grid_pager' %>
+      </th>
+    </tr>
+  </tfoot>
+</table>

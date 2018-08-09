@@ -1,0 +1,7 @@
+<% if @err_string.blank? %> 
+	window.location.href = "/thankyou"
+<%else%>
+	alert("<%=@err_string.html_safe %>")
+	$("#formSubButton").text('Complete Order'); 
+	$("#formSubButton").removeAttr('disabled'); 
+<%end%>

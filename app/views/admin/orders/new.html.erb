@@ -1,0 +1,5 @@
+<% if @distributor.present? %>
+  <%= render 'distributor_form' %>
+<% else %>
+  <%= render 'customer_form' %>
+<% end %>

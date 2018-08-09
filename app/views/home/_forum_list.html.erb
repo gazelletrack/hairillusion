@@ -1,0 +1,32 @@
+<% forums.each do |f| %>  
+	<div style="border: solid;border-width: 1px;padding: 10px;border-color: #ccc">
+		<table style="width: 100%">
+			<tr>
+				<td style="width: 100px;">Name:</td>
+				<td><b><%=f.name%></b></td>
+			</tr>
+			<tr>
+				<td style="width: 100px;">Address:</td>
+				<td><b><%=f.address.try(:html_safe)%></b></td>
+			</tr>
+			<tr>
+				<td style="width: 100px;">Country:</td>
+				<td><b><%=get_country_name(f.country,true)%></b></td>
+			</tr>
+			<tr>
+				<td style="width: 100px;">State:</td>
+				<td><b><%=get_state_name(f.country,f.state)%></b></td>
+			</tr>
+			<tr>
+				<td>Details:</td>
+				<td><%= f.content.html_safe %></td>
+			</tr>
+		</table> 
+	  </div>   
+<%end%>  
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$(".pagination").find("a").attr("data-remote", true);
+});
+</script>

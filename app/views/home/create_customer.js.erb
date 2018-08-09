@@ -1,0 +1,10 @@
+<% if @error != "" %>
+	alert("<%=@error%>") 
+<%else%>
+	alert("You have successfully created hairillusion accout.")
+	<% if @redirect == true %>
+		window.location.href = "/checkout"
+	<%elsif product_count > 0 %>
+		window.location.href = "/cart"
+	<%end%>
+<%end%>

@@ -1,0 +1,26 @@
+<%if @error.blank? && @carriers.size > 0  %>
+<table class="table">
+	<thead>
+		<th>Select</th>
+		<th>Carrier</th>
+		<th>Amount</th>
+		<th>Expcted Delivery Date</th>
+	</thead>
+	<tbody>
+		<% @carriers.each do |c| %>
+			<tr>
+				<td><%= radio_button_tag 'shipping_rate',"#{c[:amount]}____#{c[:shipping_code]}", false, :onclick=>"onChooseCarier(this)", :class=>"shippingRateCB" %> </td>
+				<td><%=c[:name]%></td>
+				<td><%=c[:amount]%> $</td>
+				<td><%=c[:deliver_min_date].strftime("%m/%d/%Y")%> - <%=c[:deliver_max_date].strftime("%m/%d/%Y")%> </td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+	<button type="button" data-target-id="collapseAccount" onclick="onCheckShipSelected(event)" data-collapsed="collapseAccount2" class="btn hi-btn btn-lg pull-left btn-continue">CONTINUE</button>
+ 
+  									
+<%else%>
+<br /> 
+<h5 style="color: #ff0000;font-weight: bold">Please enter valid address,zip code/Click again if address looks fine.</h5>
+<%end%>

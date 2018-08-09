@@ -1,0 +1,11 @@
+$("#shipment_name").val("<%=@shipping_name%>");   
+$("#shipment_car").val("<%=@shipping_name%>");   
+$("#shipment_price").val("<%=@shipping%>"); 
+$("#shipment_selected").val("true");  
+
+var price = parseFloat($("#order-subtotal-price").text()) + parseFloat("<%=@shipping%>") 
+$("#order-total-price").text(price);   
+$("#total_price").val(price); 
+$("#order-shipping-price").text("<%=@shipping%>");   
+
+

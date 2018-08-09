@@ -1,0 +1,9 @@
+<% if @error != ""%>
+	alert("<%=@error%>")
+<%else%>
+	<% if params[:from] =="checkout" %>
+		window.location.href = "/checkout"
+	<% else %>
+		window.location.href = "/dashboard"
+	<%end%>
+<%end%>

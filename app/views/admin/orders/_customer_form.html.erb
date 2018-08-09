@@ -1,0 +1,92 @@
+<div id="checkoutForm" class="row">
+  <div class="col-md-6">
+    <h2>Order Form</h2>
+
+    <%= form_for @order, url: @customer.new_record? ? admin_orders_path : admin_customer_orders_path(@customer), html: { class: 'form-horizontal' } do |f| %>
+      <%= f.fields_for :order_items, @order_item do |oi| %>
+        <%= control_group(@order_item, :color, label: 'Select Color') do %>
+		<%= oi.select( "product_id", options_from_collection_for_select(Product.all, "id", "description", @order.order_items[0].product_id), {:include_blank => false}, { :class=>"form-control required"})%>  
+        <% end %>
+
+        <%= control_group(@order_item, :color, label: 'Quantity') do %>
+          <%= oi.number_field :quantity, min: 1, step: 1, class: 'form-control required order-quantity', data: { price: 59.95 } %></td>
+        <% end %>
+      <% end %>
+
+      <div class="contact_info">
+        <h4>PERSONAL INFORMATION</h4>
+        <%= fields_for @customer do |c| %>
+          <%= control_group(@customer, :first_name, label: 'First Name') do %>
+            <%= c.text_field :first_name, class: 'form-control required' %>
+          <% end %>
+
+          <%= control_group(@customer, :last_name, label: 'Last Name') do %>
+            <%= c.text_field :last_name, class: 'form-control required' %>
+          <% end %>
+
+          <%= control_group(@customer, :email, label: 'Email') do %>
+            <%= c.email_field :email, class: 'form-control required' %>
+          <% end %>
+
+          <%= control_group(@customer, :address1, label: 'Street Address') do %>
+            <%= c.text_field :address1, class: 'form-control required' %>
+          <% end %>
+
+          <%= control_group(@customer, :address2, label: 'Suite / Apt') do %>
+            <%= c.text_field :address2, class: 'form-control' %>
+          <% end %>
+
+          <%= control_group(@customer, :city, label: 'City') do %>
+            <%= c.text_field :city, class: 'form-control required' %>
+          <% end %>
+			
+		  <%= control_group(@customer, :country, label: 'Country') do %>
+            <%= c.country_select :country, { prompt: 'Please select a country'}, { class: 'form-control required' } %>
+          <% end %> 
+          
+          <%= control_group(@customer, :state, label: 'State/Region/Province') do %>
+            <%= c.text_field :state,  class: 'form-control required' %>
+          <% end %>
+
+          <%= control_group(@customer, :zip, label: 'Postal/Zip Code') do %>
+            <%= c.text_field :zip, class: 'form-control required'%>
+          <% end %>
+        <% end %>
+
+      </div>
+      <div class="payment">
+        <h4>CREDIT CARD INFORMATION</h4>
+        <%= fields_for @credit_card do |cc| %>
+          <%= control_group(@credit_card, :name, label: 'Name on Card') do %>
+            <%= cc.text_field :name, class: 'form-control required', autocomplete: :off %>
+          <% end %>
+
+          <%= control_group(@credit_card, :number, label: 'Card Number') do %>
+            <%= cc.number_field :number, class: 'form-control required', autocomplete: :off, :size => 20 %>
+          <% end %>
+
+          <%= control_group(@credit_card, :cvc, label: 'CVC') do %>
+            <%= cc.number_field :cvc, class: 'form-control required', autocomplete: :off, :size => 4 %>
+          <% end %>
+
+          <%= control_group(@credit_card, :exp_month, label: 'Expiration') do %>
+            <div class="row">
+              <div class="col-md-4">
+                <%= select_month(nil, { :prefix => :credit_card, :field_name => :exp_month, use_month_numbers: true, prompt: 'MM' }, { class: 'form-control required' }) %>
+              </div>
+              <div class="col-md-8">
+                <%= select_year(nil, { :prefix => :credit_card, :field_name => :exp_year, start_year: Time.now.year, end_year: Time.now.year + 10, prompt: 'YYYY' }, { class: 'form-control required' }) %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div style="text-align:center;" class="col-md-12">
+          <%= f.submit 'Create Order', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

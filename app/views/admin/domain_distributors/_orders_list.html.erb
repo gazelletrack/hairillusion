@@ -1,0 +1,29 @@
+ 
+<b>Comission on below orders: $<%= number_with_precision(get_commission(distributor_orders), :precision => 2) %> </b>
+<br />
+<%= will_paginate distributor_orders, :container => false %>
+<br />
+<table class="table table-striped table-bordered table-hover table-condensed grid-table">
+	<tr>
+		<th>Date</th> 
+		<th>Customer</th>
+		<th>Details</th>
+	</tr>
+	<% distributor_orders.each do |order| %>
+		<tr>
+			<td>
+				<%= order.created_at.strftime("%d/%m/%Y at %H:%M") %>
+			</td>
+			<td> 
+				<%="#{order.try(:order).try(:orderer).try(:name)}"%> 
+			</td>
+			<td>  
+				<% if order.try(:order) %>
+					<%= link_to("Details", admin_order_path(order.try(:order))) %> 
+				<%end%>
+			</td>
+		</tr>
+	<%end%>
+</table> 
+
+<%= will_paginate distributor_orders, :container => false %>

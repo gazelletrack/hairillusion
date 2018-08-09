@@ -1,0 +1,48 @@
+<% if @orderer.present? %>
+  <% if @orderer.class == Distributor %>
+    <% url = admin_distributor_orders_path(@orderer) %>
+    <h2><%= @orderer.company_name %> (Distributor) Orderes</h2>
+  <% elsif @orderer.class == Customer %>
+    <% url = admin_customer_orders_path(@orderer) %>
+    <h2><%= @orderer.name %> (Customer) Orders</h2>
+  <% else %>
+    <% url = admin_orders %>
+  <% end %>
+<% end %>
+
+<table class="table table-striped table-bordered table-hover table-condensed grid-table" data-url="<%= url %>">
+  <thead>
+    <tr>
+      <th data-field="created_at" data-sort="true" data-default-sort="desc">Created</th>
+      <th data-field="id" data-sort="true">Order #</th>
+      <th data-field="orderer" data-sort="true">Ordered By</th>
+      <th data-field="host" data-sort="true">Host</th>
+      <th>Shipped</th>
+      <th></th>
+    </tr>
+    <tr class="filters">
+      <th class="filter">
+        <%= text_field_tag :filter_created_at, nil, 'data-field' => 'created_at' %>
+      </th>
+      <th class="filter">
+        <%= text_field_tag :filter_id, nil, 'data-field' => 'id' %>
+      </th>
+      <th class="filter">
+        <%= text_field_tag :filter_orderer, nil, 'data-field' => 'orderer' %>
+      </th>
+      <th class="filter">
+        <%= text_field_tag :filter_host, nil, 'data-field' => 'host' %>
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  <tfoot>
+    <tr>
+      <th colspan="6">
+        <%= render 'admin/shared/grid_pager' %>
+      </th>
+    </tr>
+  </tfoot>
+</table>

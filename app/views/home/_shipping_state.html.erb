@@ -1,0 +1,24 @@
+<div id="shipping_state_code_wrapper">
+  <% parent_region ||= params[:parent_region] %>
+	<% selected_value ||= selected_value %>
+  <% country = Carmen::Country.coded(parent_region) %> 
+  <% if country.nil? %>
+    <em>Please select a country above</em>
+  <% elsif country.subregions? %> 
+    <%= subregion_select(:shipment, :state, parent_region, :onchange=>"alert('')") %>
+  <% else %>
+    <%= text_field(:shipment, :state) %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#shipment_state").addClass("form-control required'");
+	$("#valueOfShippingState").val($("#shipment_state").val())  
+	$("#shipment_state").val("<%=selected_value%>") 
+	})
+	
+	$( "#shipment_state" ).change(function() {
+	  $("#valueOfShippingState").val($("#shipment_state").val())
+	}); 
+</script>

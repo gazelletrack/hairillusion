@@ -1,0 +1,64 @@
+<div id="checkoutForm" class="row">
+  <div class="col-md-6">
+    <h2>Order Form</h2>
+
+    <%= form_for @order, url: admin_distributor_orders_path(@distributor), html: { class: 'form-horizontal' } do |f| %>
+      <%= f.hidden_field :orderer_id %>
+      <table class="table table-bordered table-condensed">
+        <thead>
+          <th>Product</th>
+          <th>Quantity</th>
+        </thead>
+        <tbdoy>
+          <%= f.fields_for :order_items do |oi| %>
+            <tr>
+              <td>
+                <%= oi.object.product.description %>
+                <%= oi.hidden_field :product_id %>
+              </td>
+              <td><%= oi.number_field :quantity, min: 0, step: 1, class: 'form-control required order-quantity', data: { price: @distributor.price / 100.0 } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="payment">
+        <h4>CREDIT CARD INFORMATION</h4>
+        <%= fields_for @credit_card do |cc| %>
+          <%= control_group(@credit_card, :name, label: 'Name on Card') do %>
+            <%= cc.text_field :name, class: 'form-control required', autocomplete: :off %>
+          <% end %>
+
+          <%= control_group(@credit_card, :number, label: 'Card Number') do %>
+            <%= cc.number_field :number, class: 'form-control required', autocomplete: :off, :size => 20 %>
+          <% end %>
+
+          <%= control_group(@credit_card, :cvc, label: 'CVC') do %>
+            <%= cc.number_field :cvc, class: 'form-control required', autocomplete: :off, :size => 4 %>
+          <% end %>
+
+          <%= control_group(@credit_card, :exp_month, label: 'Expiration') do %>
+            <div class="row">
+              <div class="col-md-4">
+                <%= select_month(nil, { :prefix => :credit_card, :field_name => :exp_month, use_month_numbers: true, prompt: 'MM' }, { class: 'form-control required' }) %>
+              </div>
+              <div class="col-md-8">
+                <%= select_year(nil, { :prefix => :credit_card, :field_name => :exp_year, start_year: Time.now.year, end_year: Time.now.year + 10, prompt: 'YYYY' }, { class: 'form-control required' }) %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div style="text-align:center;" class="col-md-12">
+          <p>Your Total Today is <strong>$<span id="order-total-price"><%= number_to_currency(@order.total / 100.0) %></span></strong></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div style="text-align:center;" class="col-md-12">
+          <%= f.submit 'Create Order', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>

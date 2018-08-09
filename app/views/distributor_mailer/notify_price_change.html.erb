@@ -1,0 +1,45 @@
+Dear <%=@distributor.first_name %> <%=@distributor.last_name %>, 
+<br />
+<br />
+
+<b>You are approved for the special wholesale prices listed below. </b>
+
+<br />
+<br />
+
+
+  <table style="width: 100%;font-family: verdana,arial,sans-serif;font-size:11px; color:#333333;border-width: 1px; border-color: #666666;border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th width="60%" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #dedede;">Product Name #</th>
+        <th width="40%" colspan="2" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #dedede;">Price</th>
+      </tr> 
+    </thead> 
+    <tbody> 
+    	<% @price_list.each do |price_list| %>
+        <tr>
+          <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><%= price_list.distributor_product.name%></td>
+          <td colspan="2" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"> $ <%= number_with_precision(price_list.price, :precision => 2)  %></td>
+ 		</tr>   	
+      <% end %> 
+    </tbody>
+  </table>
+  
+ <br /> 
+ <b style="color: #ff0000">Please use the link and password below to login. </b>
+  
+<br />
+	<b>https://gethairillusion.com/distributors/new?from=email</b>
+<br />
+<br />
+<br />
+<b>login email: <%=@distributor.email %></b>
+<br />
+<b >login password: <b style="color: #ff0000">hairillusion</b> </b>
+ 
+<br />
+<br />
+Thanks, 
+<br />
+Hairillusionllc
+<br />

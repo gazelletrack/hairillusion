@@ -1,0 +1,459 @@
+<div class="contains black" style="padding-bottom: 0">
+	<div class="container">
+		<h3 class="text-uppercase text-center">Autoship (Subscribe & Save)</h3>
+	</div>
+</div>
+
+<div class="contains">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="list-unstyled">
+					<li>
+						<i class="fa fa-check-circle hi-highlight"></i> Save up to 54%
+					</li>
+					<li>
+						<i class="fa fa-check-circle hi-highlight"></i> Free Standard Shipping, always
+					</li>
+					<li>
+						<i class="fa fa-check-circle hi-highlight"></i> Flexibility: modify or skip shipment
+					</li>
+					<li>
+						<i class="fa fa-check-circle hi-highlight"></i> Cancel anytime
+					</li>
+				</ul>
+				<p>
+					Signing up for Autoship program is the easiest way to save money and never worry about running out of Hair Illusion, Simply select any of our products, choose how often you want to receive them, and we'll ship your order right to your doorstep, at the intervals you request. The best part is (aside from huge savings) - when it's time to replenish, you won't have to do a thing.
+				</p>
+
+				<h4>Benefits Of Joining Our Hair Club</h4>
+				<p>
+					Only Pay $8.95 For Process/Handing.Free Hairline Optimizer & Free Shipping With First Order <b> (Please note you will get 18G bottle in first shipment)</b>. 30 Days After your Order And Every 30 Days After You Will Receive a Full Month Supply Of Hair Illusion 38g bottle for just $<%= @recurrent_price%> with free shipping. Charged to the card you provide today unless you cancel. No Commitment. You Can Cancel Any time Or Adjust Your Monthly Plan According To How Much Hair Illusion You Use.
+				</p>
+
+				<h4>Best Deal Ever</h4>
+				<p>
+					Up to 54% off! No promotion will beat the Autoship prices, not even our Black Friday or Cyber Monday deals.
+				</p>
+				<h4>Free Shipping</h4>
+				<p>
+					Enjoy free standard shipping, always (US customers only).
+				</p>
+				<h4>Maximum Flexibility</h4>
+				<p>
+					Going out of town? Temporarily suspend it. Have enough product on hand? Modify or skip the next delivery. You can manage all these in your account area.
+				</p>
+				<h4>Cancel Anytime</h4>
+				<p>
+					Change your mind? Cancel your enrollment any time, 24 hours a day, online (in your account area).
+				</p>
+				<p>
+					The following comparison table illustrates the huge saving of Autoship program:
+				</p>
+				<% if @iphone %> 
+					<div class="panel" style="margin-left: -10px;">
+						<table class="hi-orders2" border="1" width="100%;">  
+							<tbody>
+								<tr>
+									<th>Hair Illusion 38g</th>
+									<td class="text-center">44.95</td>
+									<td class="text-center">$38.95</td>
+									<td class="hi-highlight text-center">$<%=@recurrent_price %></td>
+									<td class="text-center">$20.00
+									<tr>
+										<th>Shipping</th>
+										<td class="text-center">$4.95</td>
+										<td class="text-center">$4.95</td>
+										<td class="hi-highlight text-center">0</td>
+										<td class="text-center">$4.95</td>
+									</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th>Total</th>
+									<th class="text-center">$64.90</th>
+									<th class="text-center">$43.90
+									<p>
+										(<%=get_percentage(64.9, 43.9)%>% off regular price)
+									</p></th>
+									<th class="text-center"><span class="hi-highlight">$<%=@recurrent_price %></span>
+									<p>
+										(<%=get_percentage(64.9, "#{@recurrent_price }")%>% off regular price)
+									</p></th>
+									<th class="text-center" style="border: 6px solid #a94442;">$39.95
+									<p class="text-danger">
+										Total Saving
+									</p></th>
+								</tr>
+							</tfoot>
+						</table> 
+				</div>
+				<%else%>
+					<table class="table hi-orders">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="text-center">Regular Price</th>
+									<th class="text-center">Current Promorion</th>
+									<th class="hi-highlight text-center">Autoship Price</th>
+									<th class="text-center">Autoship Saving</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Hair Illusion 38g</th>
+									<td class="text-center">$44.95</td>
+									<td class="text-center">$38.95</td>
+									<td class="hi-highlight text-center">$<%=@recurrent_price %></td>
+									<td class="text-center">$20.00
+									<tr>
+										<th>Shipping</th>
+										<td class="text-center">$4.95</td>
+										<td class="text-center">$4.95</td>
+										<td class="hi-highlight text-center">0</td>
+										<td class="text-center">$4.95</td>
+									</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th>Total</th>
+									<th class="text-center">$64.90</th>
+									<th class="text-center">$43.90
+									<p>
+										(<%=get_percentage(64.9, 43.9)%>% off regular price)
+									</p></th>
+									<th class="text-center"><span class="hi-highlight">$<%=@recurrent_price %></span>
+									<p>
+										(<%=get_percentage(64.9, "#{@recurrent_price}")%>% off regular price)
+									</p></th>
+									<th class="text-center" style="border: 6px solid #a94442;">$39.95
+									<p class="text-danger">
+										Total Saving
+									</p></th>
+								</tr>
+							</tfoot>
+						</table>
+				<%end%>
+			</div>
+		</div>
+		<div class="row hi-product-details">
+			<div class="col-sm-4">
+				<img src="/assets/hi products/IMG_3666.jpg" class="img-thumbnail center-block">
+			</div>
+			<div class="col-sm-8">
+				<h1 class="title">Hair Illusion 38g</h1>
+				<p class="details">
+					<label>Price:</label> Free +  8.95 s/h charge
+					<br />
+					<label>Color:</label><span id="colorshow"></span>
+					<input type="hidden" value="<%= params[:type] %>" name="product_type"/>
+					<span id="showcolordefault">click the color swatch to select</span>
+				</p>
+				<ul class="color-item" id="color-ul">
+					<li class="hi-color-jetblack" val="Jet Black">
+						Jet Black
+						<div class="color-tip" style="display: none;">
+							<div class="color-tip-inner">
+								<i></i>Jet Black
+							</div>
+						</div>
+					</li>
+					<li class="hi-color-black" val="Black">
+						Black
+						<div class="color-tip" style="display: none;">
+							<div class="color-tip-inner">
+								<i></i>Black
+							</div>
+						</div>
+					</li>
+					<li class="hi-color-darkbrown" val="Dark Brown">
+						Dark Brown
+						<div class="color-tip" style="display: none;">
+							<div class="color-tip-inner">
+								<i></i>Dark Brown
+							</div>
+						</div>
+					</li>
+					<li class="hi-color-brown" val="Brown">
+						Brown
+						<div class="color-tip" style="display: none;">
+							<div class="color-tip-inner">
+								<i></i>Brown
+							</div>
+						</div>
+					</li>
+					<li class="hi-color-lightbrown" val="Light Brown">
+						Light Brown
+						<div class="color-tip" style="display:none">
+							<div class="color-tip-inner">
+								<i></i>Light Brown
+							</div>
+						</div>
+					</li>
+					<li class="hi-color-red" val="Auburn">
+						Auburn
+						<div class="color-tip" style="display: none;">
+							<div class="color-tip-inner">
+								<i></i>Auburn
+							</div>
+						</div>
+					</li>
+					<li class="hi-color-blonde" val="Blonde">
+						Blonde
+						<div class="color-tip" style="display: none;">
+							<div class="color-tip-inner">
+								<i></i>Blonde
+							</div>
+						</div>
+					</li>
+					<li class="hi-color-lightblonde" val="Light Blonde">
+						Light Blonde
+						<div class="color-tip" style="display:none">
+							<div class="color-tip-inner">
+								<i></i>Light Blonde
+							</div>
+						</div>
+					</li>
+				</ul>
+				<input type="hidden" name="color" id="color-field">
+			</div>
+			<form method="post" action="/create_club_order" data-remote="true">
+				<div class="row" style="padding-left: 25px;padding-right: 25px">
+					<div class="col-sm-6">
+						<h5 class="title">BILLING ADDRESS</h5>
+						<div class="row checkout_row">
+							<div class="col-sm-6">
+								<label for="billing_firstname">First name *</label>
+								<input type="text" class="form-control" value="<%= @customer.try(:first_name) %>" name="billing[firstname]" id="billing_firstname" required="true">
+							</div>
+							<div class="col-sm-6">
+								<label for="billing_lastname">Last name *</label>
+								<input type="text" class="form-control" value="<%= @customer.try(:last_name) %>" name="billing[lastname]" id="billing_lastname" required="true">
+							</div>
+						</div>
+						<br />
+						<label for="billing_country_id">Country:</label>
+							United States  
+							<input type="hidden"  value="US" name="billing[country]" >
+						<br />
+						<br />
+						<label for="billing_address">Address *</label>
+						<input type="text" class="form-control" value="<%= @customer.try(:address1) %>" name="billing[address]" id="billing_address" required="true">
+						<br />
+						<label for="billing_address_2">Apt/Suite</label>
+						<input type="text" class="form-control" value="<%= @customer.try(:address2) %>" name="billing[address_2]" id="billing_address_2">
+						<br />
+						<div class="row">
+							<div class="col-sm-6">
+								<label for="billing_city">City *</label>
+								<input type="text" class="form-control" value="<%= @customer.try(:city) %>" name="billing[city]" id="billing_city" required="true" required="true">
+							</div>
+							<div class="col-sm-6">
+								<label for="billing_state">State *</label>
+								<div id="billing_state_td">
+									<% selected_b_state2 = @customer.try(:billing_state)? @customer.try(:billing_state) : "AL" %> 
+									<%= render partial: 'billing_state', locals: {parent_region: 'US', selected_value: selected_b_state2 } %>
+								</div>
+							</div>
+						</div>
+						<br />
+						<div class="row">
+							<div class="col-sm-6">
+								<label for="billing_zip">Zip *</label>
+								<input type="text" class="form-control" value="<%= @customer.try(:zip) %>" name="billing[zip]" id="billing_zip" required="true">
+							</div>
+							<div class="col-sm-6">
+								<label for="billing_phone">Phone *</label>
+								<input type="text" class="form-control" value="<%= @customer.try(:phone) %>" name="billing[phone]" id="billing_phone" required="true">
+							</div>
+						</div>
+						<br />
+						<label for="billing_email">Email *</label>
+						<input type="email" class="form-control" value="<%= @customer.try(:email) %>" name="billing[email]" id="billing_email" required="true">
+
+						<br />
+
+						<h4 class="title">Payment Details</h4>
+						<br />
+
+						<div id="cc" style="padding-left: 28%;">
+							<%= image_tag 'visa.png', :style=>"width: 37px;"%>
+							<%= image_tag 'mastercard.png', :style=>"width: 37px;"%>
+							<%= image_tag 'amex.png', :style=>"width: 37px;display:none;"%>
+							<%= image_tag 'discover.png', :style=>"width: 37px;"%>
+						</div>
+						<br />
+						<label >Name on Card *</label>
+						<input type="text" class="form-control" value="" name="card_holder_name" id="card_holder_name" required="true">
+						<br />
+						<label >Card Number *</label>
+						<input type="number" class="form-control" value="" name="card_number" id="card_number" required="true">
+						<br />
+						<div class="row">
+							<div class="col-sm-4">
+								<label >Expiration Month *</label>
+								<select id="CardExpirationMonth" name="CardExpirationMonth" class="form-control" required="true">
+									<option value="01">01 - Jan</option>
+									<option value="02">02 - Feb</option>
+									<option value="03">03 - Mar</option>
+									<option value="04">04 - Apr</option>
+									<option value="05">05 - May</option>
+									<option value="06">06 - Jun</option>
+									<option value="07">07 - Jul</option>
+									<option value="08">08 - Aug</option>
+									<option value="09">09 - Sep</option>
+									<option value="10">10 - Oct</option>
+									<option value="11">11 - Nov</option>
+									<option value="12">12 - Dec</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label for="billing_firstname">Expiration Year *</label>
+								<select id="CardExpirationYear" class="form-control" name="CardExpirationYear" required="true">
+									<option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<label>Card CVV *</label>
+								<input type="number" class="form-control" value="" name="card_cvv" id="card_cvv" required="true" style="max-width: 120px" required="true">
+								<br /> 
+								<input type="hidden" name="same_shipping" value="0" id="same_shipping_address">
+								<input type="hidden" name="color" value="" id="product_color">  
+							</div> 
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<h5 class="title" style="color: #ff0000">SHIPPING ADDRESS
+						<input type="checkbox" id="billing_shipping_address" name="same_address" onchange="onChangeShippingHOCB()">
+						(Check if same as billing address) </h5>
+
+						<div class="row checkout_row">
+							<div class="col-sm-6">
+								<label for="shipping_firstname">First name *</label>
+								<input type="text" class="form-control" value="<%= @customer.try(:billing_first_name) %>" name="billing[shipping_firstname]" id="shipping_firstname">
+							</div>
+							<div class="col-sm-6">
+								<label for="shipping_lastname">Last name *</label>
+								<input type="text" class="form-control" value="<%= @customer.try(:billing_last_name) %>" name="billing[shipping_lastname]" id="shipping_lastname">
+							</div>
+						</div>
+						<br />
+						<label for="shipping_country_id">Country: *</label>
+							United States  
+							<input type="hidden"  value="US" name="shiping[country]" > 
+						<br />
+						<br />
+						<label for="shipping_address">Address *</label>
+						<input type="text" class="form-control" value="<%= @customer.try(:billing_address1) %>" name="billing[shipping_address]" id="shipping_address">
+						<br />
+						<label for="shipping_address_2">Apt/Suite</label>
+						<input type="text" class="form-control" value="<%= @customer.try(:billing_address2) %>" name="billing[shipping_address_2]" id="shipping_address_2">
+						<input type="hidden" name="billing[shipping_state]" value="AL" id="valueOfShippingState"/>
+						<br />
+						<div class="row">
+							<div class="col-sm-6">
+								<label for="shipping_city">City *</label>
+								<input type="text" class="form-control"<%= @customer.try(:city) %>" name="billing[shipping_city]" id="shipping_city">
+							</div>
+							<div class="col-sm-6">
+								<label for="shipping_state">State *</label>
+								<div id="shipping_state_td">
+									<% selected_b_state = @customer.try(:billing_state)? @customer.try(:billing_state) : "AL" %> 
+									<%= render partial: 'shipping_state', locals: {parent_region: 'US', selected_value:selected_b_state }  %>
+								</div>
+							</div>
+						</div>
+						<br />
+						<div class="row">
+							<div class="col-sm-6">
+								<label for="shipping_zip">Zip *</label>
+								<input type="text" class="form-control"<%= @customer.try(:billing_zip) %>" name="billing[shipping_zip]" id="shipping_zip">
+							</div>
+							<div class="col-sm-6">
+								<label for="shipping_phone">Phone *</label>
+								<input type="text" class="form-control"<%= @customer.try(:billing_phone) %>" name="billing[shipping_phone]" id="shipping_phone">
+							</div>
+						</div>
+					</div> 
+				</div>
+				<div class="row" style="padding-left: 25px;padding-right: 25px"> 
+					<br />
+					<div class="col-sm-6">
+						<div id="termsDiv" >
+									<div style="font-weight: bold">
+										Please read terms & checkmark box before placing order.
+										<br />
+										<br />
+									</div>
+									<%= text_area(:application,:notes, :value=> get_terms_text.html_safe, rows: 15, id: 'terms_text') %>
+									<br />
+									<%= check_box_tag :terms %> <b>
+										I’ve read the terms and agree to join the Hair Illusion Hair Club.
+										i understand i will receive future orders at the discounted price
+										and can cancel or adjust shipments anytime.		
+										</b>
+										
+						 		</div> 
+						 		<button type="submit" class="btn hi-btn btn-lg pull-right" id="formSubButton">
+									Complete Order
+								</button>
+					</div>
+				</div> 
+			</form>
+		</div>
+
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	// <![CDATA[
+	jQuery('#color-ul').find('li').each(function() {
+		jQuery(this).click(function(e) {
+			if (jQuery(this).attr('val') != undefined) {
+				jQuery('#color-ul').find('li').removeClass('cur');
+				jQuery('#color-ul').find('li>div').hide();
+				jQuery(this).addClass('cur');
+				jQuery(this).find('div').show();
+				jQuery('#colorshow').html(jQuery(this).find('div .color-tip-inner').text());
+				jQuery('#color-field').attr('value', jQuery(this).attr('val'));
+				jQuery('#showcolorerror').hide();
+				jQuery('#showcolordefault').hide();
+			}
+
+		});
+
+		/* jQuery(this).mouseover(function(){
+		 jQuery(this).find('div').show();
+		 });
+
+		 jQuery(this).mouseout(function(){
+		 jQuery(this).find('div').hide();
+		 }); */
+	});
+
+	jQuery('form').submit(function() {
+		$("#product_color").val($('#color-field').val())
+		if (jQuery('#color-field').val() == "") {
+			alert('Please choose color of the product')
+			jQuery('#showcolordefault').css({
+				'color' : 'red',
+				'font-weight' : 'bold'
+			});
+			return false;
+		} 
+		terms = !document.getElementById("terms").checked;
+			if( terms )
+			{
+				alert("Please read terms & checkmark box before placing order."); 
+				return false;
+			} 
+		 else {
+			$('#formSubButton').text("Processing...")
+			$('#formSubButton').prop('disabled', true);
+		}
+	});
+
+</script>
+

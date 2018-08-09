@@ -1,0 +1,21 @@
+<table width="100%" class="table table-bordered">
+	<% if session[:cart] && session[:cart].size > 0 %>
+		<% session[:cart].each do |c| %>
+		<tr>
+			<td width="100px"> 
+			<b><%= c[:name] %></b></td>
+			<td width="50px" style="text-align: center"><b><%= c[:quantity].to_i %></b></td>
+			<td width="60px" style="text-align: center"><b><%= number_with_precision(c[:price], :precision => 2) %>$</b></td>
+			<td width="50px" style="text-align: center"><%= link_to "X", "", :onclick=>"removeProduct(event,'#{c[:name]}')" %></td>
+		</tr>
+	<% end %>
+	<tr>
+		<td colspan="4" style="text-align: right;padding:8px;"> Total Amount: <%= get_total_amount %>$ </td>
+	</tr>
+	<% else %>
+	<tr>
+		<td colspan="4" style="text-align: center"> Please select products to checkout. </td>
+	</tr>
+	<% end %>
+</table>
+<%= hidden_field_tag "url", :value=>"" %>

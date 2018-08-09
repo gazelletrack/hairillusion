@@ -1,0 +1,27 @@
+<div class="col-sm-12">
+	<h3 class="text-uppercase text-left">Edit Auoship Color</h3> 
+
+	<div class="row" style="font-size: 16px">
+		<div class="col-sm-4" style="font-weight: bolder">
+			Current Color: <%= @order.order_items.first.product_name %>
+		</div>
+		<div class="col-sm-3">
+			Last shipped: <%= @order.last_delivery_date.strftime("%d/%m/%Y")%>
+		</div> 
+		<div class="col-sm-3">
+			Next shipment: <%= @order.next_delivery_date.strftime("%d/%m/%Y")%>
+		</div>
+	</div>
+	<br />
+	<div class="row" style="font-size: 16px">
+		<div class="col-sm-3">
+			Update Color TO:
+		</div>
+		<div class="col-sm-9">
+			<%= select_tag "new_color", options_for_select([["Select",""], ["Jet Black", 1], ["Black", 2], ["Dark Brown", 3], ["Brown", 4], ["Light Brown", 5], ["Auburn", 6], ["Blonde", 7], ["Light Blonde", 8]]), :class=>"form-control"  %>
+		</div>
+	</div>
+	
+	<%= link_to "Update Color", "#", :onclick=>"onClickUpdateColor(#{@order.id})", :class=>"btn btn-primary"%>
+	<br />
+</div>

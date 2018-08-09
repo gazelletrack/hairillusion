@@ -1,0 +1,19 @@
+<div id="order_state_code_wrapper">
+  <% parent_region ||= params[:parent_region] %>
+  <% selected_value ||= selected_value %>
+  <% country = Carmen::Country.coded(parent_region) %> 
+  <% if country.nil? %>
+    <em>Please select a country above</em>
+  <% elsif country.subregions? %>
+    <%= subregion_select(:billing, :state, parent_region) %>
+  <% else %>
+    <%= text_field(:billing, :state) %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#billing_state").addClass("form-control required'");
+	$("#billing_state").val("<%=selected_value%>") 
+})
+</script>

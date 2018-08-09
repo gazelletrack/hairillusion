@@ -1,0 +1,12 @@
+<tr>
+  <td><%= distributor.company_name %></td>
+  <td><%= distributor.city %></td>
+  <td><%= distributor.state %></td>
+  <td><%= number_to_currency(distributor.price / 100.0) %></td>
+  <td><%= distributor.created_at %></td>
+  <td align="center"><%= '&#x2713;'.html_safe if distributor.approved %></td>
+  <td>
+    <%= link_to icon_text('Details', 'glyphicon glyphicon-info-sign'), admin_distributor_path(distributor), class: 'btn btn-sm btn-success' %>
+    <%= link_to icon_text('Edit', 'glyphicon glyphicon-pencil'), edit_admin_distributor_path(distributor), class: 'btn btn-sm btn-primary' %>
+  </td>
+</tr>

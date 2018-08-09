@@ -1,0 +1,45 @@
+ <div class="contains">
+      <div class="container">
+        <h3 class="text-uppercase">CONTACT US</h3>
+        
+        <div class="row">
+          <div class="col-sm-4"><p>support@hairillusion.com</p></div>
+          <div class="col-sm-8 form-contactus">
+            <p>For more inquries, kindly leave a message. Thanks</p>
+            <form class="form-horizontal" method="POST"  action="/post_enquiry">
+              <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="name" required="true">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" id="email" name="email" required="true">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject" class="col-sm-3 control-label">Subject</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="subject" name="subject" required="true">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="col-sm-3 control-label">Message</label>
+                <div class="col-sm-9">
+                  <textarea name="textarea" rows="10" name="message" cols="50" class="form-control" required="true" id="message" placeholder="Write your message here."></textarea>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <button type="submit" class="btn hi-btn btn-lg pull-right">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

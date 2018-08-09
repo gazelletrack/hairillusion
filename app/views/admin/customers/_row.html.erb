@@ -1,0 +1,13 @@
+<tr>
+  <td><%= customer.created_at %></td>
+  <td><%= customer.first_name %></td>
+  <td><%= customer.last_name %></td>
+  <td><%= mail_to(customer.email) %></td>
+  <td><%= customer.city %></td>
+  <td><%= customer.state %></td>
+  
+  <td>
+    <%= link_to icon_text('Info', 'glyphicon glyphicon-info-sign'), admin_customer_path(customer), class: 'btn btn-sm btn-success' %>
+    <%= link_to icon_text('Edit', 'glyphicon glyphicon-pencil'), edit_admin_customer_path(customer), class: 'btn btn-sm btn-primary' %>
+  </td>
+</tr>

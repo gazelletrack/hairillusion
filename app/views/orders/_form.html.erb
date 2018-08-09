@@ -1,0 +1,114 @@
+<div id="checkoutForm" class="row">
+
+	<div class="col-md-8" style="font-family: Arial">
+		<h1 style="font-family: Arial;font-weight: normal">HAIR ILLUSION</h1>
+		<h2>NOTHING LOOKS MORE NATURAL, PERIOD.</h2>
+		<h3 style="color: #ff0000">We use 1 ingredient 100% natural human hair.</h3>
+		<p>
+			<h3>Balding is Depressing. There’s no two ways about it. Hair Illusion can’t stop you from balding, but it can conceal thin or bald hair naturally.</h3>
+		</p>
+		<br />
+		<div style="width: 100%;display:inline-block">
+			<div class="row" style="background: #fff;padding: 20px;width:100%;display:inline-block;padding-top: 30px"> 
+				<table width="100%">
+					<tr>
+						<td style="padding: 10px;vertical-align: top;">
+							<%= image_tag('price.jpg', class: "img-responsive", :style=>'max-height:400px') %> 
+							<br />
+							<%= link_to "Purchase Now", '/buy_now', :class=>"btn btn-danger btn-lg", style: 'display:inline-block' %>
+							<br />  
+						</td> 
+						<td> 
+							<%= image_tag('bottle_img.jpg', class: "img-responsive") %> 
+						</td>
+						<td style="color: #000;font-size: 20px">
+							<p> <h4 style="font-family: Arial"> 30 Day money back guarantee</h4></p>  
+							<p>  <h4 style="font-family: Arial"> Worldwide shipping available</h4></p> 
+							<br /> 
+							<a href="http://www.bbb.org/boston/business-reviews/beauty-supplies-and-equipment/hair-illusion-in-middleton-ma-140151" target="new"><%= image_tag('cbbb.png', class: "img-responsive", alt: 'Hair illusion is accredited by BBB') %></a>
+						</td>
+					</tr>
+				</table>  
+			</div>
+		</div>	  
+	</div> 
+	<div class="col-md-4" >
+		<% if page == "top" %>
+		<div class="col-md-12" style="padding: 0px">
+			<div class="youtube-video" style="padding: 0px"> 				
+				<iframe width="350" height="350" src="//www.youtube.com/embed/s60RC5fdtyc?rel=0&autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>   
+			</div>
+		</div>  
+		<div class="clearfix"></div>
+		<br /> 
+		<%= image_tag('pic.png', class: "img-responsive", style: 'display:inline-block') %>
+		<%else%>
+			<%= image_tag('pic.jpg', class: "img-responsive", style: 'display:inline-block') %>  
+		<%end%>
+	</div>
+</div>
+
+</div>
+
+<style type="text/css">
+	#product_widget {
+		margin-left: 30px;
+	}
+</style>
+
+<script type="text/javascript">
+	function onClickBuy() {
+		if ($("#products_size").val() > 0) {
+			var win = window.open($("#buy_url").val(), '_blank');
+			if (win) {
+				win.focus();
+			} else {
+				alert('Please allow popups for this site');
+			}
+		} else {
+			alert('Please select the color + quantity and add to cart. Then click on Buy Now.');
+		}
+	}
+
+	function onAddProduct(e, type) {
+		product_type = type;
+		product_name = "";
+		quantity = 1
+		if (product_type == 'upsell') {
+			product_name = "Fibre hold(Upsell)";
+			quantity = $("#upsell_quantity").val(),
+		} else {
+			product_name = $("#color_selector :selected").text();
+			quantity = $("#quantity").val(),
+		}
+		$.ajax({
+			url : "/add_to_cart",
+			data : {
+				quantity : quantity,
+				product : product_name,
+				product_id : $("#color_selector").val(),
+				unit_price : 49.95,
+				referel : 'hairillusion.net',
+				product_type : product_type,
+				upsell_qty : $("#upsell_quantity").val(),
+				upsell_id : 3066968513
+			}
+		});
+		e.preventDefault();
+		e.stopPropagation();
+	}
+
+	function removeProduct(e, product) {
+		$.ajax({
+			url : "/remove_from_cart",
+			data : {
+				product : product, 
+				unit_price : 49.95,
+				product_id : $("#color_selector").val(),
+				referel : 'hairillusion.net'
+			}
+		});
+		e.preventDefault();
+		e.stopPropagation();
+	}
+</script>

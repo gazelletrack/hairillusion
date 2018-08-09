@@ -1,0 +1,181 @@
+<div class="jumbotron">
+	<div class="container">
+		<div id="checkoutForm" class="row"> 
+	<div class="col-md-6"> 
+			<div class="contact_info"> 
+			<div class="col-md-12" style="background-color: #ffffff;color:#555;padding-top: 10px">
+				<h5 style="padding: 0px;color:black">Purchase Now!</h5> 
+				<div class="row" style="padding-left:20px;display: inline-block">
+					<%= image_tag('price.jpg', class: "img-responsive", style: 'display:inline-block') %>  
+					<%= image_tag('cbbb.png', class: "img-responsive", style: 'display:inline-block') %>  
+					</div>
+					
+				
+				<hr style="width: 100%" style="padding-top: 0px" />
+				<h5>Please select the color + quantity and add to cart. Then click on Buy Now.</h5>
+				<hr style="width: 100%" style="padding-top: 0px" />
+				<div class="row" style="padding-left: 10px;padding-bottom: 10px;padding-top: 0px;">
+					<table class="table">
+						<tr>
+							<td style="padding: 2px;vertical-align: middle"><b>Color:</b></td>
+							<td style="padding: 2px"><%= select_tag "color_selector", options_for_select(colours_list), :class=>"form-control" %></td>
+							<td style="padding: 2px;width: 55px;text-align: right;vertical-align: middle">Qty:</td>
+							<td style="padding: 2px"><%= select_tag "quantity", options_for_select((1..10)), :class=>"form-control" %></td>
+							<td style="padding: 2px"><%= link_to "Add to Cart","", :onclick=>"onAddProduct(event,'product')", :class=>"btn btn-primary btn-sm" %></td>
+						</tr>
+					</table>  
+				</div>
+				<div class="row" style="padding-left: 10px;padding-bottom: 10px">
+					<div style="font-weight: bold;width: 100%;padding:5px;padding-left: 5px;">Select Upsells</div>
+					 
+					<table class="table">
+						<tr>
+							<td style="padding: 2px;vertical-align: middle" colspan="2"><b> <%= link_to "Fiber Hold Spray", 'fibre_hold', :target=>"new", :style=>"color:#ff0000;font-weight:bold;text-decoration:underline" %></b></td>
+							<td style="padding: 2px;width: 55px;text-align: right;vertical-align: middle">Qty:</td>
+							<td style="padding: 2px"><%= select_tag "fibre_quantity", options_for_select((1..10)), :class=>"form-control" %></td>
+							<td style="padding: 2px"><%= link_to "Add to Cart","", :onclick=>"onAddProduct(event,'upsell')", :class=>"btn btn-primary btn-sm" %></td>
+						</tr>
+						<tr>
+							<td style="padding: 2px;vertical-align: middle" colspan="2"><b> <%= link_to "Optimizer", '/optimizer', :style=>"color:#ff0000;font-weight:bold;text-decoration:underline", :target=>"new" %></b></td>
+							<td style="padding: 2px;width: 55px;text-align: right;vertical-align: middle">Qty:</td>
+							<td style="padding: 2px"><%= select_tag "optimizer_quantity", options_for_select((1..10)), :class=>"form-control" %></td>
+							<td style="padding: 2px"><%= link_to "Add to Cart","", :onclick=>"onAddProduct(event,'optimizer')", :class=>"btn btn-primary btn-sm" %></td>
+						</tr>
+						<tr>
+							<td style="padding: 2px;vertical-align: middle" colspan="2"><b> <%= link_to "Mirror", '/mirror', :style=>"color:#ff0000;font-weight:bold;text-decoration:underline", :target=>"new" %></b></td>
+							<td style="padding: 2px;width: 55px;text-align: right;vertical-align: middle">Qty:</td>
+							<td style="padding: 2px"><%= select_tag "mirror_quantity", options_for_select((1..10)), :class=>"form-control" %></td>
+							<td style="padding: 2px"><%= link_to "Add to Cart","", :onclick=>"onAddProduct(event,'mirror')", :class=>"btn btn-primary btn-sm" %></td>
+						</tr>
+					</table>  
+				</div>
+				<div class="row" style="padding-left: 10px;padding-bottom: 10px; padding-right: 10px; text-align: center;max-height: 120px;overflow:auto;" id="listTable">
+					<%= render "home/cart" %>
+				</div> 
+				
+				<div class="row" style="padding-left: 110px;padding-bottom: 10px;width:100%;display:inline-block">
+					<%= hidden_field_tag "buy_url", ''%>
+					<%= hidden_field_tag "products_size", 0%>
+					<%= link_to_function "Buy Now", "onClickBuy()", :class=>"btn btn-danger"%>
+					<%= link_to "Clear Cart", "/buy_now", :class=>"btn btn-default"%>  
+				</div> 
+			</div>
+		</div>
+	</div> 
+	
+		<div class="col-md-6">  
+			<h3 class="title-text">AVAILABLE COLORS</h3>
+
+					<div class="order-colors" id="order-colors">
+					<div class="colorpicker" style="background:url('<%= image_path("DarkBrownPhoto.jpg") %>'); border: 6px solid #ffffff;">
+						<%= image_tag 'haircolor.png', id: 'g', width: 258, height: 188 %>
+						<div class="colorbox">
+							<div class="color" style="background:url('<%= image_path("JetBlackThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("JetBlackPhoto.jpg") %>\')');" title="Jet Black">&nbsp;</div>
+							<div class="color" style="background:url('<%= image_path("BlackThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("BlackPhoto.jpg") %>\')');" title="Black">&nbsp;</div>
+							<div class="color" style="background:url('<%= image_path("DarkBrownThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("DarkBrownPhoto.jpg") %>\')');" title="Dark Brown">&nbsp;</div>
+							<div class="color" style="background:url('<%= image_path("BrownThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("BrownPhoto.jpg") %>\')');" title="Brown">&nbsp;</div>
+							<div class="color" style="background:url('<%= image_path("LightBrownThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("LightBrownPhoto.jpg") %>\')');" title=Light Brown">&nbsp;</div>
+							<div class="color" style="background:url('<%= image_path("RedThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("RedPhoto.jpg") %>\')');" title="Auburn">&nbsp;</div>
+							<div class="color" style="background:url('<%= image_path("PlatinumBlondeThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("PlatinumBlondePhoto.jpg") %>\')');" title="Light Blonde">&nbsp;</div>
+							<div class="color" style="background:url('<%= image_path("DarkPlatinumBlondeThumb.jpg") %>');" onMouseOver="$(this).parent().parent().css('background', 'url(\'<%= image_path("DarkPlatinumBlondePhoto.jpg") %>\')');" title="Blonde">&nbsp;</div>
+						</div>
+					</div>
+					<p style="width: 100%;text-align: left">Browse available colors by clicking the color tile.</p>
+					<br /> 
+					<p> <h4 style="font-family: Arial"> 30 Day money back guarantee</h4></p>					
+					<p>  <h4 style="font-family: Arial"> Worldwide shipping available</h4></p>
+				</div>   
+			<br /> 
+		</div> 
+	</div>
+	
+	
+</div>
+
+<style type="text/css">
+	#product_widget
+	{
+		margin-left: 30px;
+	}
+</style>
+
+<script type="text/javascript">   
+	
+function onClickBuy()
+{ 
+	if($("#products_size").val() > 0)
+	{ 
+		var win = window.open($("#buy_url").val(), '_blank');
+		if(win)
+		{ 
+			win.focus();
+		}
+		else
+		{ 
+			alert('Please allow popups for this site'); 
+		} 
+	}
+	else
+	{
+		alert('Please select the color + quantity and add to cart. Then click on Buy Now.'); 
+	}
+}
+
+	function onAddProduct(e,type)
+	{
+		product_type = type;
+		product_name = "";
+		quantity = 1;
+		upsell_id = 3066968513
+		if(product_type == 'upsell' || product_type == 'mirror' || product_type == 'optimizer' )
+		{
+			if(product_type == 'upsell')
+			{
+				product_name = "Fibre hold(Upsell)";
+				quantity = $("#fibre_quantity").val();
+				upsell_id = 3066968513
+			}
+			if(product_type == 'mirror')
+			{
+				product_name = "Mirror";
+				quantity = $("#mirror_quantity").val();
+				upsell_id = 20331819585
+			}
+			if(product_type == 'optimizer')
+			{
+				product_name = "Optimizer";
+				quantity = $("#optimizer_quantity").val();
+				upsell_id = 20331738433
+			} 
+		}
+		else
+		{
+			product_name = $("#color_selector :selected").text();
+			quantity = $("#quantity").val()
+		} 
+		
+		 $.ajax({
+          url: "/add_to_cart",
+          data: { 
+              quantity: quantity, product: product_name,product_id: $("#color_selector").val(), unit_price:49.95, referel:'hairillusion.net', product_type: product_type, upsell_qty: $("#upsell_quantity").val(), upsell_id: upsell_id
+          }
+      	});
+		e.preventDefault();
+		e.stopPropagation(); 
+	}
+	
+	function removeProduct(e,product)
+	{
+		 $.ajax({
+          url: "/remove_from_cart",
+          data: { 
+               product: product, unit_price:49.95,product_id: $("#color_selector").val(), referel:'hairillusion.net'
+          }
+      	});
+		e.preventDefault();
+		e.stopPropagation(); 
+	}
+</script>
+
+	</div>
+</div>

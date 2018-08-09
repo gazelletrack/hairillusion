@@ -1,0 +1,45 @@
+<div class="col-md-6">
+  <h2>Customer</h2>
+
+  <%= form_for @customer, url: edit_admin_customer_path(@customer), html: { class: 'form-horizontal' } do |f| %>
+    <%= control_group(@customer, :first_name, label: 'First Name') do %>
+      <%= f.text_field :first_name, class: 'form-control required' %>
+    <% end %>
+
+    <%= control_group(@customer, :last_name, label: 'Last Name') do %>
+      <%= f.text_field :last_name, class: 'form-control required' %>
+    <% end %>
+
+    <%= control_group(@customer, :email, label: 'Email') do %>
+      <%= f.email_field :email, class: 'form-control required' %>
+    <% end %>
+
+    <%= control_group(@customer, :address1, label: 'Street Address') do %>
+      <%= f.text_field :address1, class: 'form-control required' %>
+    <% end %>
+
+    <%= control_group(@customer, :address2, label: 'Suite / Apt') do %>
+      <%= f.text_field :address2, class: 'form-control' %>
+    <% end %>
+
+    <%= control_group(@customer, :city, label: 'City') do %>
+      <%= f.text_field :city, class: 'form-control required' %>
+    <% end %>
+     
+	<%= control_group(@customer, :country, label: 'Country') do %>
+    	<%= f.country_select :country, {prompt: 'Please select a country'}, { class: 'form-control required' } %>
+	<% end %> 
+          
+    <%= control_group(@customer, :state, label: 'State/Region/Province') do %>
+    	<%= f.text_field :state,  class: 'form-control required' %> 
+    <% end %>
+  
+    <%= control_group(@customer, :zip, label: 'Postal/Zip Code') do %>
+      <%= f.text_field :zip, class: 'form-control required'%>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.submit nil, class: 'btn btn-sm btn-success' %>
+    </div>
+  <% end %>
+</div>

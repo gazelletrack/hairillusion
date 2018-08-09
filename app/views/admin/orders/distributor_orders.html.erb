@@ -1,0 +1,27 @@
+ 
+<%= will_paginate @orders, :container => false %>
+
+<br />
+<table class="table table-striped table-bordered table-hover table-condensed grid-table">
+	<tr>
+		<th>Date</th> 
+		<th>Distributor</th>
+		<th>Details</th>
+	</tr>
+	<% @orders.each do |order| %>
+		<tr>
+			<td>
+				<%= order.created_at.strftime("%d/%m/%Y at %H:%M") %>
+			</td>
+			<td> 
+				<%= link_to("#{order.try(:orderer).try(:name)}", admin_distributor_path(order.try(:orderer))) %>
+ 
+			</td>
+			<td>  
+				<%= link_to("Order Details", admin_distributor_orders_path(order.try(:orderer))) %> 
+			</td>
+		</tr>
+	<%end%>
+</table> 
+
+<%= will_paginate @orders, :container => false %>

@@ -1,0 +1,74 @@
+<style>
+	.add_table td {
+		padding: 3px
+	}
+</style>
+
+<%= form_for @forum, url: @forum.new_record? ? admin_forums_path : admin_forum_path(@forum), html: { class: 'form-horizontal' } do |f| %>
+
+<% if @forum.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@forum.errors.count, "error") %> prohibited this admin_domain_distributor from being saved:</h2>
+
+	<ul>
+		<% @forum.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<table class="add_table">
+		<tr>
+		<td style="vertical-align: top"><b>Domain:</b></td> 
+		<td> <%= @forum.domain_name %> </td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top"><b>Content:</b></td> 
+		<td> <%= f.text_area :content, :required=>true, :style=>"width:300px;height:300px", :class => 'ckeditor' %> </td>
+	</tr>
+	<tr>
+		<td> Name:</td>
+		<td><%= f.text_field :name, { class: 'form-control required' } %></td>
+	</tr>
+	 	
+	 	<tr>
+		<td> Address:</td>
+		<td><%= f.text_area :address, { class: 'form-control required' } %></td>
+	</tr>
+ <tr>
+		<td> Country:</td>
+		<td><%= get_country_name(@forum.country,true) %></td>
+	</tr>
+  <tr>
+		<td> State/Region/Province:</td>
+		<td><%= get_state_name(@forum.country,@forum.state) %> 
+		</td>
+	</tr>
+ 
+    
+	<tr>
+		<td><b>Approved:</b></td>
+		<td> <%= f.check_box :approved  %> </td>
+	</tr>
+
+</table>
+
+<br />
+<div class="actions">
+	<%= f.submit "Save", :class=>"btn btn-primary" %>
+	<%= link_to 'Back', admin_forums_path, :class=>"btn btn-default" %>
+</div>
+<br />
+<br />
+<br />
+<% end %>
+
+<script type="text/javascript"> 
+  $(document).ready(function(){
+	$('.ckeditor').ckeditor({ 
+	});
+  }); 
+</script>

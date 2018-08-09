@@ -1,0 +1,37 @@
+
+<h4> Client Name: <%= @domain_distributor.name%></h4>
+<h4> Email Address: <%= @domain_distributor.email%></h4>
+<h4> Company Name: <%= @domain_distributor.company_name %></h4>
+<h4> Domain Name: <%= @domain_distributor.domain%></h4>
+
+<b>Comission for orders from <%= params[:start_date]%> to <%= params[:end_date]%> is: $<%= number_with_precision(get_commission(@distributor_orders), :precision => 2) %> </b>
+<br />
+<br />
+<b>Total sales from <%= params[:start_date]%> to <%= params[:end_date]%> is: $<%= number_with_precision(get_total_sales(@distributor_orders), :precision => 2) %> </b>
+
+<br />
+<br />
+
+<table border="1" bordercolor="#ccc">
+	<tr>
+		<th>Date</th>
+		<th>Customer</th>
+		<th>Name</th>
+		<th>Qty</th>
+		<th>Price</th>
+	</tr>
+	<% @distributor_orders.each do |order| %> 
+	
+		<% order.order.order_items.each do |order_item| %>
+            <tr>
+				<td style="padding:5px"> <%= order.order.created_at.strftime("%d/%m/%Y at %H:%M") %> </td>
+				<td style="padding:5px"> <%= order_item.try(:order).try(:orderer).try(:name) %> </td>
+				<td style="padding:5px"> <%=order_item.try(:product).try(:description)%> </td>
+				<td style="padding:5px"> <%=order_item.quantity%> </td>
+				<td style="padding:5px"> <%= number_to_currency( (order_item.price*order_item.quantity) / 100.0) %> </td>
+			</tr>
+          <% end %> 
+	<%end%>
+</table>
+
+

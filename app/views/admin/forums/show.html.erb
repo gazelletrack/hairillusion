@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-bordered">
+	<tr>
+		<td>Subject:</td>
+		<td><%= @forum.subject %></td>
+	</tr>
+	<tr>
+		<td>Content:</td>
+		<td><%= @forum.content.html_safe %></td>
+	</tr>
+	<tr>
+		<td>Approved:</td>
+		<td><%= @forum.approved %></td>
+	</tr>
+</table>
+   
+
+<%= link_to 'Edit', edit_admin_forum_path(@forum) %> |
+<%= link_to 'Back', admin_forums_path %>

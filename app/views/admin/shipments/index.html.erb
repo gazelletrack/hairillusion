@@ -1,0 +1,29 @@
+<h2>Shipments</h2>
+<% unshipped_count = Order.unshipped.count %>
+<b><%= pluralize(unshipped_count, 'unshipped order') %></b>
+<% if unshipped_count > 0 %>
+  <%= link_to "New Shipment", admin_shipments_path, method: :post, class: 'btn btn-sm btn-primary' %>
+<% end %>
+
+<table class="table table-striped table-bordered table-hover table-condensed grid-table" data-url="<%= admin_shipments_path %>">
+  <thead>
+    <tr>
+      <th data-field="created_at" data-sort="true" data-default-sort="desc">Created</th>
+      <th></th>
+    </tr>
+    <tr class="filters">
+      <th class="filter">
+        <%= text_field_tag :filter_created_at, nil, 'data-field' => 'created_at' %>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2">
+        <%= render 'admin/shared/grid_pager' %>
+      </th>
+    </tr>
+  </tfoot>
+</table>

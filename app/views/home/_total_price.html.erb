@@ -1,0 +1,5 @@
+<% if session[:discount] && session[:discount].to_f > 0 %>
+	$<%= number_with_precision(get_sub_total + get_shipping_price - session[:discount].to_f, :precision => 2) %>
+<%else%>
+	$<%= number_with_precision(get_sub_total + get_shipping_price, :precision => 2) %>
+<%end%>

@@ -1,0 +1,9 @@
+if("<%=@error%>")
+{ 
+	alert("sorry, discount coupon not found")  
+	$("#discoutDiv").html('');   
+}
+else
+{
+	$("#discoutDiv").html('<%= escape_javascript(render('get_discount' )) %>');   
+} 

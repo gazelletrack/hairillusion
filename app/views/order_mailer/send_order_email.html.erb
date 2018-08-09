@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Order created from your domain-<%=@distributor.domain%></title>
+
+  <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+  <style type="text/css">
+    body {
+      margin:    0 auto;
+      max-width: 550px;
+      padding: 20px 0;
+    }
+    table.gridtable {
+      width: 100%;
+      font-family: verdana,arial,sans-serif;
+      font-size:11px;
+      color:#333333;
+      border-width: 1px;
+      border-color: #666666;
+      border-collapse: collapse;
+    }
+    table.gridtable th {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #dedede;
+    }
+    table.gridtable td {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <strong>New Order created from your domain-<%=@distributor.domain%>!</strong>
+  <table class="gridtable" border="1">
+    <thead>
+      <tr>
+        <th width="60%">Order creator details:</th>
+        <th width="40%"><%= @order.orderer.name %>, <%= @order.orderer.email %></th>
+      </tr>
+      <tr>
+        <th width="60%">Time: </th>
+        <th width="40%"><%= @order.created_at %></th>
+      </tr>
+    </thead>
+     
+    <tbody>
+    </tbody>
+  </table>
+</body>

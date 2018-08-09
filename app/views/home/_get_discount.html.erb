@@ -1,0 +1,5 @@
+<div class="clearfix"></div> 
+<p class="pull-right" style="font-size: 17px;color: red">Discount: $<%= number_with_precision(@discount_price, :precision => 2) %></p>
+<br />
+<br />
+<p class="pull-right" style="font-size: 19px;font-weight: bold">Final Subtotal: $<%= number_with_precision(get_sub_total-@discount_price, :precision => 2) %></p>

@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-6 well">
+    <p>
+      <strong>Order #:</strong>
+      <%= @order.id %>
+    <p>
+
+    <p>
+      <strong>Ordered By:</strong>
+      <% if @order.orderer_type == Customer.name %>
+        <%= link_to("#{@order.orderer.first_name} #{@order.orderer.last_name} (Customer)", admin_customer_path(@order.orderer)) %>
+      <% elsif @order.orderer_type == Distributor.name %>
+        <%= link_to("#{@order.orderer.company_name} (Distributor)", admin_distributor_path(@order.orderer)) %>
+      <% end %>
+    <p>
+
+    <p>
+      <strong>Ordered At:</strong>
+      <%= @order.created_at %>
+    <p>
+
+    <% if @order.shipment.present? %>
+      <p>
+        <strong>Shipped At:</strong>
+        <%= link_to(@order.shipment.created_at, admin_shipment_path(@order.shipment)) %>
+      </p>
+    <% end %>
+
+    <p>
+      <% if @order.refunded_at %>
+        <strong>Refunded At:</strong>
+        <%= @order.refunded_at %>
+      <% else %>
+        <%= link_to('Refund Order', refund_admin_order_path(@order), method: :put, class: 'btn btn-sm btn-success') %>
+      <% end %>
+    <p>
+
+    <p>
+      <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+          <th>Product</th>
+          <th>Product Code</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </thead>
+        <tbdoy>
+          <% @order.order_items.each do |order_item| %>
+            <tr>
+              <td><%= order_item.product.description %></td>
+              <td><%= order_item.product.product_code %></td>
+              <td><%= order_item.quantity %></td>
+              <td><%= number_to_currency(order_item.price / 100.0) %></td>
+              <td><%= number_to_currency(order_item.total / 100.0) %></td>
+            </tr>
+          <% end %>
+        </tbdoy>
+      </table>
+    </p>
+
+    <p>
+      <%= link_to icon_text('Edit', 'glyphicon glyphicon-pencil'), edit_admin_order_path(@order), class: 'btn btn-sm btn-primary' %>
+    </p>
+  </div>
+</div>

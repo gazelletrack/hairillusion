@@ -1,0 +1,7 @@
+<tr>
+  <td><%= shipment.created_at %></td>
+  <td>
+    <%= link_to icon_text('Detail', 'glyphicon glyphicon-info-sign'), admin_shipment_path(shipment), class: 'btn btn-sm btn-success' %>
+    <%= link_to icon_text('Download', 'glyphicon glyphicon-cloud-download'), admin_shipment_path(shipment, format: :xml), class: 'btn btn-sm btn-primary' %>
+  </td>
+</tr>

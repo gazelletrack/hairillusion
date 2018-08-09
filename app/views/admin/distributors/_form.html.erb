@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>Distributor Form</h2>
+
+    <%= form_for @distributor, url: @distributor.new_record? ? admin_distributors_path : admin_distributor_path(@distributor), html: { class: 'form-horizontal' } do |f| %>
+      <%= control_group(@distributor, :company_name, label: 'Company') do %>
+        <%= f.text_field :company_name, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :first_name, label: 'First Name') do %>
+        <%= f.text_field :first_name, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :last_name, label: 'Last Name') do %>
+        <%= f.text_field :last_name, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :email, label: 'Email') do %>
+        <%= f.email_field :email, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :phone, label: 'Phone') do %>
+        <%= f.phone_field :phone, class: 'form-control required' %>
+      <% end %>
+
+      <%= control_group(@distributor, :address1, label: 'Address') do %>
+        <%= f.text_field :address1, class: 'form-control' %>
+      <% end %>
+
+      <%= control_group(@distributor, :address2, label: 'Address 2') do %>
+        <%= f.text_field :address2, class: 'form-control' %>
+      <% end %>
+   
+      <%= control_group(@distributor, :country, label: 'Country') do %>
+        <%= f.country_select :country, {prompt: 'Please select a country'}, { class: 'form-control required' } %>
+      <% end %> 
+      
+      <%= control_group(@distributor, :state, label: 'State/Region/Province') do %> 
+        <%= render partial: 'subregion_select', locals: {parent_region: f.object.country} %>
+      <% end %>
+
+      <%= control_group(@distributor, :city, label: 'City') do %>
+        <%= f.text_field :city, class: 'form-control' %>
+      <% end %>
+      
+      <%= control_group(@distributor, :zip, label: 'Postal/Zip Code') do %>
+        <%= f.text_field :zip, class: 'form-control' %>
+      <% end %>
+
+      <%= control_group(@distributor, :price, label: 'Price') do %>
+        <%= f.number_field :price, value: @distributor.price / 100.0, min: 0, step: 0.01, class: 'form-control' %>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.submit nil, class: 'btn btn-sm btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>

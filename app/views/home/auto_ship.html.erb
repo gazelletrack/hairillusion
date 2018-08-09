@@ -1,0 +1,48 @@
+
+<div class="col-sm-12">
+	<h3 class="text-uppercase">My Active Autoship Order</h3>
+	<%if @orders.size > 0 %>
+	<div class="row">
+		<div class="col-sm-12">
+			<form class="table-responsive"">
+			<table class="table hi-cart-table">
+			<thead>
+			<tr>
+			<th>Product</th>
+			<th width="20%" class="text-right">Started</th>
+			<th width="15%" class="text-center">Last Develivered</th>
+			<th width="15%" class="text-right">Next Delivery</th> 
+			<th width="15%" class="text-right">Edit</th> 
+			</tr>
+			</thead>
+			<tbody>
+				<% @orders.each do |order| %> 
+					<tr>
+						<td> Hairillusion <%= order.order_items.first.product_name %> </td>
+						<td class="text-right"><%=order.created_at.strftime('%a, %d %b %Y') %></td>
+						<td class="text-center">
+							<% if order.last_delivery_date %> 
+								<%= order.last_delivery_date.strftime('%a, %d %b %Y')  %> 
+							<% end %>
+						</td> 
+						<td class="text-right">
+							<% if order.last_delivery_date %> 
+								<%= order.next_delivery_date.strftime('%a, %d %b %Y')  %> 
+							<% end %>
+						</td> 
+						<td class="text-right" style="font-weight: bold;font-size: 16px;color: #ff0000">
+							<a href="/edit_color?id=<%=order.id%>&customer_id=<%= order.orderer_id %>">Edit Color</a>
+						</td>
+					</tr> 
+				<%end%>
+			</tbody>
+			</table>
+			</form>
+		</div>
+		<br />
+		<br />
+	</div>
+	<%else%>
+		<h5>You dont have any past orders.</h5>
+	<%end%>
+</div>

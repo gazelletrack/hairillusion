@@ -1,0 +1,29 @@
+<h3>Forums</h3>
+
+<table class="table table-striped table-bordered table-hover table-condensed grid-table">
+  <thead>
+    <tr> 
+      <th>Content</th>
+      <th>Domain</th>
+      <th>Approved</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forums.each do |admin_forum| %>
+      <tr> 
+        <td><%= admin_forum.content.html_safe[0..29] %></td>
+        <td><%= admin_forum.domain_name %></td>
+        <td><%= admin_forum.approved %></td>
+        <td><%= link_to 'Show', admin_forum_path(admin_forum) %></td>
+        <td><%= link_to 'Edit', edit_admin_forum_path(admin_forum) %></td>
+        <td><%= link_to 'Destroy', admin_forum_path(admin_forum), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br> 

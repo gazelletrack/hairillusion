@@ -1,0 +1,5 @@
+<% if @order.orderer_type == Distributor.name %>
+  <%= render 'distributor_form' %>
+<% elsif @order.orderer_type == Customer.name %>
+  <%= render 'customer_form' %>
+<% end %>

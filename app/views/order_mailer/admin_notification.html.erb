@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New order generated</title>
+ 
+</head>
+<body style="margin: 0 auto; max-width: 550px;padding: 20px 0;">
+  <strong>New order generated from <%=@order.order_source%></strong>
+  <br />
+  <br />
+  <table style="width: 100%;font-family: verdana,arial,sans-serif;font-size:11px; color:#333333;border-width: 1px; border-color: #666666;border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th width="60%" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #dedede;">Order #</th>
+        <th width="40%" colspan="2" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #dedede;"><%= @order.id %></th>
+      </tr>
+      <tr>
+        <th width="60%" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #dedede;"></th>
+        <th width="20%" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #dedede;">Price</th>
+        <th width="20%" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #dedede;">Total</th>
+      </tr>
+    </thead> 
+    <tbody> 
+        <tr>
+          <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">Name: <%= @order.orderer.name%></td>
+          <td colspan="2" style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">Name: <%= @order.orderer.email%></td>
+ 		</tr>   	
+      <% @order.order_items.each do |order_item| %>
+        <tr>
+          <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><%= order_item.product_name %> (x<%= order_item.quantity %>)</td>
+          <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><%= number_to_currency(order_item.price / 100.0) %></th>
+          <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><strong><%= number_to_currency(order_item.total / 100.0) %></strong></td>
+        </tr>
+      <% end %>
+      <% if (@order.shipping_price.to_f>0 ) %>
+	      <tr>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">Shipping</td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"></td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><strong><%= number_to_currency(@order.shipping_price) %></strong></td>
+	      </tr>      
+      <%end%>
+      <% if (@order.discount && @order.discount.to_f>0 ) %>
+	      <tr>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">Discount</td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"></td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><strong><%= number_to_currency(@order.discount) %></strong> <br /> Coupon: <%= @order.coupon_code %></td>
+	      </tr>      
+      <%end%>
+      <% if (@order.process_handling_price.to_f>0 ) %>
+	      <tr>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">P&H</td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"></td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><strong><%= number_to_currency(@order.process_handling_price) %></strong></td>
+	      </tr>      
+      <%end%>
+      <tr>
+        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">Total</td>
+        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"></td>
+        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><strong><%= number_to_currency(@order.total_price_for_email) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+</body>

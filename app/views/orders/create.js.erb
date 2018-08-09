@@ -1,0 +1,15 @@
+<% if params[:get_shipping].to_s == "true" %>
+	$("#distShipButton").val("Get available shipping carriers");
+	$("#shippingPrefDiv").html(" <%= escape_javascript( render 'shipping_methods') %>");  
+<%else%>  
+	<% if @error == "" %>    
+		window.location.href = "/orders/confirmation" 
+	<%else%>     
+		message = "<%= @error %>"
+		message = message.replace(/'/g, "''");
+		alert(message)
+		$("#distOrderButton").show()
+		$("#order-submit-spinner").hide() 
+	<%end%>
+<%end%>
+

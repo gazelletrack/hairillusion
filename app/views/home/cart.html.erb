@@ -1,0 +1,120 @@
+<div class="contains">
+	<div class="container">
+		<h3 class="text-uppercase text-center">Shopping Cart</h3>
+		<% if flash[:notice] %>
+		<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<%= flash[:notice]%>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<% end %>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel">
+					<% if @iphone %>
+						<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+							<table class="hi-orders2" border="1" width="100%;"> 
+		                    	<thead>
+									<tr>
+										<th>Product</th>
+										<th class="text-right">Unit Price</th>
+										<th class="text-right">Qty</th>
+										<th class="text-right">Subtotal</th>
+										<th class="text-center">Remove</th>
+									</tr>
+								</thead>  
+								<% session[:cart_obj].each do |product| %>
+								<tbody>
+								<tr>
+									<td><img src="<%= get_pic(product)%>" class="img-thumbnail"><%= product[:name] %></td>  
+									<td class="text-right">$<%= number_with_precision(product[:unit_price], :precision => 2) %></td>
+									<td class="text-right">
+										<%=product[:quantity] %> 
+									</td>
+									<td class="text-right">$<%= number_with_precision(product[:price], :precision => 2) %> </td>
+									<td class="text-center"><a href="#" onclick="onRemoveProduct('<%= product[:name]%>')"><i class="glyphicon glyphicon-remove"></i></td>
+								</tr>
+								</tbody>
+								<%end%>
+							</table>
+						<%else%>
+							Your cart is empty!
+						<%end%>
+							
+						<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+							<h3 class="pull-right">Subtotal: $<%= number_with_precision(get_sub_total, :precision => 2) %></h3>
+							<div class="clearfix"></div> 
+						<%end%>
+							
+						<%= link_to "Continue Shopping", products_path, :class=>"btn hi-btn pull-left"%>
+						<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+							<a href="/checkout" class="btn hi-btn pull-right">Proceed to checkout</a>
+						<%end%>
+						
+					<%else%>
+					
+						<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+							
+							<table class="table hi-orders2"> 
+		                    	<thead>
+									<tr>
+										<th>Product</th>
+										<th class="text-right">Unit Price</th>
+										<th class="text-right">Qty</th>
+										<th class="text-right">Subtotal</th>
+										<th class="text-right">Remove</th>
+									</tr>
+								</thead>  
+								<% session[:cart_obj].each do |product| %>
+								<tbody>
+								<tr>
+									<td><img src="<%= get_pic(product)%>" class="img-thumbnail"><%= product[:name] %></td>  
+									<td class="text-right">$<%= number_with_precision(product[:unit_price], :precision => 2) %></td>
+									<td class="text-right">
+										<%=product[:quantity] %> 
+									</td>
+									<td class="text-right">$<%= number_with_precision(product[:price], :precision => 2) %> </td>
+									<td class="text-right"><a href="#" onclick="onRemoveProduct('<%= product[:name]%>')"><i class="glyphicon glyphicon-remove"></i></td>
+								</tr>
+								</tbody>
+								<%end%>
+							</table>
+						<%else%>
+							Your cart is empty!
+						<%end%>
+							
+						<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+						
+							<h3 class="pull-right">Subtotal: $<%= number_with_precision(get_sub_total, :precision => 2) %></h3>
+							<div id="discoutDiv">
+							</div> 	
+							<div class="clearfix"></div> 
+							<div class="col-md-12">
+								<div class="col-md-8"></div>
+								
+								<div class="col-md-4 pull-right" style="display:inline;text-align:right">
+									Have coupon?
+									<%= text_field_tag :coupon_code_ti, '', :class=>"form-control", :style=>"width:100px;display:inline"%>
+									<%= link_to "Apply", '#', :onclick=>"getDiscount(event)", :class=>"btn btn-success btn-sm", :style=>"display:inline"%>
+									<div class="clearfix"></div> 
+									<div id="discountDetails"></div>
+								</div> 
+								
+							</div>
+							
+							
+							</div>
+							
+						<%end%>
+							
+						<%= link_to "Continue Shopping", products_path, :class=>"btn hi-btn pull-left"%>
+						<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+							<a href="/checkout" class="btn hi-btn pull-right">Proceed to checkout</a>
+						<%end%> 
+					<%end%>
+				 </div>
+			</div>
+		</div>
+	</div>
+</div>

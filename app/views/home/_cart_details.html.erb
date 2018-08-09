@@ -1,0 +1,45 @@
+			<div class="col-sm-12">
+				<form class="table-responsive"">
+					<table class="table hi-cart-table">
+					<thead>
+					<tr>
+						<th>Product</th>
+						<th width="10%" class="text-right">Unit Price</th>
+						<th width="6%" class="text-center">Qty.</th>
+						<th width="10%" class="text-right">Subtotal</th>
+						<th width="5%" class="text-center">Remove</th>
+					</tr>
+					</thead>
+					<tbody>
+					<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+						<% session[:cart_obj].each do |product| %>
+						<tr>
+							<td><img src="<%= get_pic(product)%>" class="img-thumbnail"> <%= product[:name] %></td>
+							<td class="text-right">$<%= product[:unit_price] %></td>
+							<td>
+							<input type="number" class="form-control" name="quantity" min="1" max="5" value="<%= product[:quantity] %>" onchange="onChangeCartQty(<%=product[:product_id]%>,<%=product[:name]%>)" id="product_<%=product[:product_id]%>">
+							</td>
+							<td class="text-right">$<%= product[:price].to_f %></td>
+							<td class="text-center"><a href="#" onclick="onRemoveProduct('<%= product[:name]%>')"><i class="glyphicon glyphicon-remove"></i></td>
+						</tr>
+						<%end%>
+					<%else%>
+						<tr>
+							<td colspan="5" style="text-align: center">Your cart is empty!</td>
+						</tr>
+					<%end%>
+					</tbody>
+					<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+						<tfoot>
+						<tr>
+							<th class="text-right" colspan="5"><h3>Subtotal: $<%= get_sub_total %></h3></th>
+						</tr>
+						</tfoot>
+						<%end%>
+						</table>
+						<%= link_to "Continue Shopping", products_path, :class=>"btn hi-btn pull-left"%>
+						<% if session[:cart_obj] && session[:cart_obj].size > 0 %>
+						<a href="/checkout" class="btn hi-btn pull-right">Proceed to checkout</a>
+					<%end%>
+				</form>
+			</div>

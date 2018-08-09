@@ -1,0 +1,1644 @@
+<div class="contains">
+	<div class="container">
+		<% if params[:type] == "small"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/hi products/IMG_8911.jpeg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<h1 class="title">Hair Illusion 18g</h1>
+					<p class="details">
+						<label>Size:</label> 18g
+						<br />
+						<label>Price:</label> $<%= number_with_precision(@small_price, :precision => 2) %>						
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="<%= params[:type] %>" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-black" val="Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2"> 
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+			
+			<div class="col-sm-12"> 
+				
+				<h4 style="font-weight: bold">Directions:</h4> 
+				<h4>
+					To apply hair illusion to thinning hair simply tap or shake the bottle over thin area until completely covered.You will not need to use our holding spray if used on thinning hair.
+				</h4>
+				<h4>
+					Hair Illusion was designed for people with thinning hair. Not completely bald.If you are using hair illusion on a completely bald area you will need to use our fiber hold spray to secure fibers. For best results follow instructions below.
+				</h4>
+				<br />
+				<h4>
+					1. Apply a light layer of our fiber hold spray to balding area.
+					<br />
+					<br />
+					2. Let dry 30-45 seconds.
+					<br />
+					<br />
+					3. Apply our Hair Illusion hair fibers.
+					<br />
+					<br />
+					4. Finnish with our fiber hold spray holding the bottle 10-12 inches from the hair and apply short easy sprays.
+					<br />
+					<br />
+					5. For best results and strongest hold. Repeat the steps 2-3 times.
+				</h4>
+				<br />
+				<h4>
+					If you plan to get your hair wet make sure to use our water resistant spray.
+				</h4> 
+				<h4>
+					If you notice the fibers are clumping or spotty looking simply add more fibers to fill in.
+				</h4> 
+			</div>
+			
+		</div>
+		<%end%>
+		
+		
+		
+		
+		<% if params[:type] == "small_6g"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/6g.jpg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<h1 class="title">Hair Illusion 6g</h1>
+					<p class="details">
+						<label>Size:</label> 6g
+						<br />
+						<label>Price:</label> $<%= number_with_precision(@small_6g_price, :precision => 2) %>						
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="<%= params[:type] %>" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-black" val="Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<!--						<div class="row quantity">
+							<label class="col-sm-2">Quantity:</label>
+							<div class="col-sm-2">
+								<select class="form-control" name="quantity"> 
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option> 
+									</select> 
+							</div>
+						</div> -->
+						<button type="button" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+							Coming Soon
+						</button>
+				</form> 
+			</div> 
+			
+			<div class="col-sm-12"> 
+				
+				<h4 style="font-weight: bold">Directions:</h4> 
+				<h4>
+					To apply hair illusion to thinning hair simply tap or shake the bottle over thin area until completely covered.You will not need to use our holding spray if used on thinning hair.
+				</h4>
+				<h4>
+					Hair Illusion was designed for people with thinning hair. Not completely bald.If you are using hair illusion on a completely bald area you will need to use our fiber hold spray to secure fibers. For best results follow instructions below.
+				</h4>
+				<br />
+				<h4>
+					1. Apply a light layer of our fiber hold spray to balding area.
+					<br />
+					<br />
+					2. Let dry 30-45 seconds.
+					<br />
+					<br />
+					3. Apply our Hair Illusion hair fibers.
+					<br />
+					<br />
+					4. Finnish with our fiber hold spray holding the bottle 10-12 inches from the hair and apply short easy sprays.
+					<br />
+					<br />
+					5. For best results and strongest hold. Repeat the steps 2-3 times.
+				</h4>
+				<br />
+				<h4>
+					If you plan to get your hair wet make sure to use our water resistant spray.
+				</h4> 
+				<h4>
+					If you notice the fibers are clumping or spotty looking simply add more fibers to fill in.
+				</h4> 
+			</div>
+			
+		</div>
+		<%end%>
+		
+		
+		 
+		<% if params[:type] == "laser"%> 
+		
+			<div class="row hi-product-details">
+				<h1 class="title">Laser Comb</h1>
+				<div class="col-sm-4">
+					<img src="/assets/laser_prod.jpg" class="img-thumbnail center-block">
+				</div> 
+				<div class="col-sm-4">
+					<img src="/assets/laser_2_prod.jpg" class="img-thumbnail center-block">
+				</div> 
+				<div class="col-sm-4">
+					<img src="/assets/laser_3.jpg" class="img-thumbnail center-block"> 
+				</div> 
+				<div class="col-sm-8"> 
+					<br />
+					<form method="POST" action="/add_cart"> 
+						<p class="details"> 
+							<label>Price:</label> $<%= number_with_precision(@laser.price.to_f/100, :precision => 2) %>
+							<input type="hidden" value="laser" name="product_type"/>
+							<br /> 
+						</p> 
+						<div class="row quantity">
+							<label class="col-sm-2">Quantity:</label>
+							<div class="col-sm-2">
+								<select class="form-control" name="quantity"> 
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option> 
+									</select> 
+							</div>
+						</div> 
+						<h3 style="font-weight: bolder"> Out of stock</h3>
+						<!--
+						<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+							Add to cart
+						</button>--> 
+					</form> 
+				</div> 
+				
+				<div class="col-sm-12">
+					<h4 style="font-weight: bold">Description:</h4> 
+					<h4>
+						The Hair Illusion Laser Comb is the only at home, safe-to-use medical device to treat
+						hair loss and promote hair growth. Low level laser therapy (LLLT) mediated by a
+						specialized laser comb was approved by the FDA as a safe treatment for male and
+						female pattern hair loss. Our product prevents hair loss and helps hair re-growth.					
+					</h4>
+					
+					<h4> <b>Additionally, the Laser Comb:</b> 
+					</h4>
+					
+					<h4>
+						Stimulates hair growth | Increases density and fullness | Reduces thinning/shedding | Revitalizes damaged hair |
+						Promotes healthy hair follicles | Improves the health of the scalp | Treats pattern baldness
+					</h4>
+					
+					<h4>
+						Clinical studies have shown that LLLT helps with several conditions, including androgenetic or andro-genic alopecia (AGA), the most common cause of baldness in men;
+						alopecia areata (AA), an autoimmune inflammatory condition; and chemotherapy-induced alopecia.
+					</h4>
+					
+					<h4>
+						Our product consists of the premium LED laser comb along with a rechargeable unit. This method is recommended for the initial re-growth as well as ongoing tri-weekly treatments for maintenance.
+					</h4>
+					
+					
+						<h4>
+							<b>USING HAIR ILLUSION LASER COMB</b>
+						</h4>
+						<ul>
+							<li>Turn the ON/OFF switch on control panel.</li>
+							<li>Placing the Hair Illusion Laser Comb flat on the scalp, slowly move it around the
+								head for a total treatment of 15-20 minutes. Hold it still for about 5 seconds before
+								moving about ½ inch. Hold in place for another 5 seconds and move again in ½
+								inch increments. Repeat the process by moving the Laser Comb against the direction of growth until you have passed it over your entire scalp </li>
+							<li>Important to move the Laser Comb slowly. This gives your scalp the opportunity to absorb the energy from the laser light</li>
+							<li>
+								If you have long hair, use your fingers or a comb to lift the hair out of the way to make sure the laser energy reaches your scalp.
+							</li>
+							<li>
+								Use the Laser Comb 15-20 minutes, three times per week on alternating days such as Monday, Wednesday, and Friday. Do not do the treatments three days in a row.
+							</li>
+						</ul>
+						
+						<h4>
+							<b>
+								Things To Keep In Mind:
+							</b>
+						</h4>
+						<ul>
+							<li>
+								Works best if your scalp is clean.
+							</li>
+							<li>
+								Wash hair before use.
+							</li>
+							<li>
+								Can be used on wet or dry hair.
+							</li>
+							<li>
+								Use before adding any hair lotions, styling gels, or other hair products.
+							</li>
+						</ul>
+						
+						<h4><b>Technical Data</b></h4>
+						
+						<img src="/assets/data.png" class="img-responsive center-block pull-left">
+					
+				</div> 
+				
+				
+			</div> 
+		<%end%>		 
+		
+		
+	
+	<% if params[:type] == "applicator"%> 
+		
+			<div class="row hi-product-details">
+				<h1 class="title">Hair Illusion Spray Applicator With 3g Fiber</h1>
+				<div class="col-sm-4">
+					<img src="/assets/applicator_large.jpg" class="img-thumbnail center-block">
+				</div>  
+				<div class="col-sm-8"> 
+					<br />
+					<form method="POST" action="/add_cart"> 
+						<p class="details"> 
+							<label>Price:</label> $<%= number_with_precision(@applicator_price, :precision => 2) %>
+							<input type="hidden" name="product_type" value="Spray Applicator"> 
+							<br /> 
+						</p>  
+						<div class="row quantity">
+							<label class="col-sm-2">Quantity:</label>
+							<div class="col-sm-2">
+								<select class="form-control" name="quantity"> 
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option> 
+									</select> 
+							</div>
+						</div>   
+						<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+							Add to cart
+						</button>
+					</form> 
+				</div> 
+				
+				<div class="col-sm-12">
+					<h4 style="font-weight: bold">Benefits:</h4> 
+					<br />
+					<h5>
+						<p>
+							* Easy to apply the fibers with this spray applicator
+						</p> 
+						<p>
+							* Better control of the amount of fibers used with each application
+						</p>
+						<p>
+							* Spreads the fibers equally and naturally – no clusters or disarray
+						</p>
+						<p>
+							* Allows for a more precise, exact aim in contrast to simply shaking fibers onto the scalp
+						</p>
+						<p>
+							* Directed spray uses fewer Hair Illusion fibers so you save money and your bottle lasts longer
+						</p>
+	
+						<p>
+							* Instantly covers up thinning areas and bald spots
+						</p>
+					</h5>
+					<br />
+					<h4 style="font-weight: bold">To use on completely bald spots or hairline:</h4> 
+					<br />
+					<h5>
+						<p>
+							1.Apply light layer of Hair Illusion Fiber Hold Spray to balding area to secure the fibers.(Let dry 60 seconds)
+						</p>
+						
+						<p>
+							2.Apply Hair Illusion Hair Fibers by spraying the Hair illusion Real Hair Fibers Spray Applicator  above the affected area.
+						</p>
+						
+						<p>
+							3.Finish with Hair Illusion Holding Spray, positioning bottle 10-12 inches from your head and spritzing in short, easy sprays.
+						</p>
+						<p>
+							4.Repeat steps 1-2 for best results and strongest hold.
+						</p>
+					
+					<br />
+					<p>
+						Note: Patent pending interchangeable tip which will allow precise spraying of the hairline. For larger areas, simply remove the tip
+					</p>
+					</h5>
+				</div> 
+				
+				
+			</div> 
+		<%end%>		 
+		
+			
+		
+		<% if params[:type] == "large"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/hi products/IMG_3666.jpg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<h1 class="title">Hair Illusion 38g</h1>
+					<p class="details">
+						<label>Size:</label> 38g
+						<br />
+						<label>Price:</label> $<%= number_with_precision(@price, :precision => 2) %>								
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="<%= params[:type] %>" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-black" val="Black">
+							Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select>  
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+			
+						
+			<div class="col-sm-12"> 
+				
+				<h4 style="font-weight: bold">Directions:</h4> 
+				<h4>
+					To apply hair illusion to thinning hair simply tap or shake the bottle over thin area until completely covered.You will not need to use our holding spray if used on thinning hair.
+				</h4>
+				<h4>
+					Hair Illusion was designed for people with thinning hair. Not completely bald.If you are using hair illusion on a completely bald area you will need to use our fiber hold spray to secure fibers. For best results follow instructions below.
+				</h4>
+				<br />
+				<h4>
+					1. Apply a light layer of our fiber hold spray to balding area.
+					<br />
+					<br />
+					2. Let dry 30-45 seconds.
+					<br />
+					<br />
+					3. Apply our Hair Illusion hair fibers.
+					<br />
+					<br />
+					4. Finnish with our fiber hold spray holding the bottle 10-12 inches from the hair and apply short easy sprays.
+					<br />
+					<br />
+					5. For best results and strongest hold. Repeat the steps 2-3 times.
+				</h4>
+				<br />
+				<h4>
+					If you plan to get your hair wet make sure to use our water resistant spray.
+				</h4> 
+				<h4>
+					If you notice the fibers are clumping or spotty looking simply add more fibers to fill in.
+				</h4> 
+			</div>
+		</div>
+		<%end%>
+		
+		
+		<% if params[:type] == "spray"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4">
+				<img src="/assets/spray.jpg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<h1 class="title">Hair Fiber Spray</h1>
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@spray.price.to_f/100, :precision => 2) %>
+						<input type="hidden" value="Hair Illusion Fiber Hold Spray" name="product_type"/>
+						<br /> 
+					</p> 
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+			<div class="col-sm-12">
+				<h4 style="font-weight: bold">Description:</h4> 
+				<h4>
+					Hair Illusion Fiber Hold Spray, designed to create a stronger bond between thinning hair and hair fibers. This special product can be used directly on bald heads and beards when applied first to form a strong bond with Hair Illusion 100% natural hair fibers.
+				</h4>
+				<br />
+				<h4 style="font-weight: bold">Directions:</h4> 
+				<h4>
+					1. Apply a light layer of our fiber hold spray to balding or thinning area.
+					<br />
+					<br />
+					2. Let dry 30-45 seconds.
+					<br />
+					<br />
+					3. Apply our Hair Illusion hair fibers.
+					<br />
+					<br />
+					4. Finnish with our fiber hold spray holding the bottle 10-12 inches from the hair and apply short easy sprays.
+					<br />
+					<br />
+					5. For best results and strongest hold. Repeat the steps 2-3 times.
+				</h4>
+
+			</div>
+		</div>
+		<%end%>
+
+
+		<% if params[:type] == "optimizer"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4">
+				<img src="/assets/optimizer.png" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<h1 class="title">Optimizer</h1>
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@optimizer.price.to_f/100, :precision => 2) %>
+						<input type="hidden" value="Optimizer" name="product_type"/>
+						<br /> 
+					</p> 
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+			
+			<div class="col-sm-12">
+				<h4 style="font-weight: bold">Description:</h4> 
+				<h4>
+					Hairline Optimizer was created specifically to achieve a natural looking hairline when used with HAIR ILLUSION 100 % natural Hair Fibers. It will help eliminate excess product for a clean natural finish & prevent fibers from falling onto the forehead. Your Hairline Optimizer is designed to be reused and stores easily for travel.
+				</h4>
+			</div>
+			
+		</div>
+		<%end%>
+		
+		
+		<% if params[:type] == "mirror"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4">
+				<img src="/assets/mrr.jpg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<h1 class="title">Mirror</h1>
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@mirror.price.to_f/100, :precision => 2) %>
+						<input type="hidden" value="Mirror" name="product_type"/>
+						<br /> 
+					</p> 
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+			
+			<div class="col-sm-12">
+				<h4 style="font-weight: bold">Description:</h4> 
+				<h4>
+					Now all you need is a hand held mirror to check your new look. You’ll want to be sure you have perfect coverage and our Hair Illusion Handheld Mirror lets you do that, easily and comfortably. This mirror is made of lightweight and durable materials making it easy to get a 360 view.
+				</h4>
+			</div>
+			
+		</div>
+		<%end%>
+		
+				
+	<% if params[:type] == "wr"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4">
+				<img src="/assets/hi products/IMG_3191.jpg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<h1 class="title">Water Resistant Spray</h1>
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@wr.price.to_f/100, :precision => 2) %>
+						<input type="hidden" value="Water Resistant Spray" name="product_type"/>
+						<br /> 
+					</p> 
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div> 
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>  
+				</form> 
+			</div> 
+			
+			<div class="col-sm-12">
+				<h4 style="font-weight: bold">Description:</h4> 
+				<h4>
+					No More worries about rain, sweating, and Showers. We have tested this product under shower water and it holds up perfect. It's not made to run your head under the shower. its made in case your hair gets wet in the shower. This spray is water resistant, NOT water proof. If you get your hair wet let your hair air dry. Do not touch your hair. Apply more spray if needed. As always we offer a no questions asked money back guarantee. Our Water Resistant Spray is not to be used as replacement of our fiber hold spray. Our water resistant spray is only to make your hair water resistant.				
+				</h4>
+			</div>
+			
+			
+		</div>
+		<%end%>
+
+
+		<% if params[:type] == "c2"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/v2.png" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<br />
+                	<h1 class="title">Two 38g bottles</h1> 
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@price_2x, :precision => 2) %>
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="c2" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-black" val="Black">
+							Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+		</div>
+		<%end%>
+		
+
+		<% if params[:type] == "c3"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/v3.png" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<br />
+                	<h1 class="title">Three 38g bottles</h1>   
+					<p class="details">  
+						<label>Price:</label> $<%= number_with_precision(@price_3x, :precision => 2) %>
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="<%= params[:type] %>" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-black" val="Black">
+							Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+		</div>
+		<%end%>
+		
+			
+	<% if params[:type] == "c4"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/v4.jpg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<br />
+                	<h1 class="title">Four 38g bottles</h1>   
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@price_4x, :precision => 2) %>
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="c4" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-black" val="Black">
+							Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+		</div>
+		<%end%>
+
+	<% if params[:type] == "c5"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/v5.png" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<br />
+                	<h1 class="title">Five 38g bottles</h1>   
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@price_5x, :precision => 2) %>
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="c5" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-black" val="Black">
+							Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+		</div>
+		<%end%>
+		
+			<% if params[:type] == "combo"%>
+		<div class="row hi-product-details">
+			<div class="col-sm-4" style="padding-top: 50px">
+				<img src="/assets/combo.jpg" class="img-thumbnail center-block">
+			</div> 
+			<div class="col-sm-8"> 
+				<form method="POST" action="/add_cart">
+					<br />
+                	<h4 class="title">One 38g Bottle</h4>  
+                	<h4 class="title">One Fiber Hold Spray </h4>  
+                	<h4 class="title">One Optimizer</h4>   
+                	<br />
+					<p class="details"> 
+						<label>Price:</label> $<%= number_with_precision(@price_combo, :precision => 2) %>
+						<br />
+						<label>Color:</label><span id="colorshow"></span> 
+						<input type="hidden" value="combo" name="product_type"/>
+						<span id="showcolordefault">click the color swatch to select</span>
+					</p>
+					<ul class="color-item" id="color-ul">
+						<li class="hi-color-jetblack" val="Jet Black">
+							Jet Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Jet Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-black" val="Black">
+							Black
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Black
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-darkbrown" val="Dark Brown">
+							Dark Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Dark Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-brown" val="Brown">
+							Brown
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightbrown" val="Light Brown">
+							Light Brown
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Brown
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-red" val="Auburn">
+							Auburn
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Auburn
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-blonde" val="Blonde">
+							Blonde
+							<div class="color-tip" style="display: none;">
+								<div class="color-tip-inner">
+									<i></i>Blonde
+								</div>
+							</div>
+						</li>
+						<li class="hi-color-lightblonde" val="Light Blonde">
+							Light Blonde
+							<div class="color-tip" style="display:none">
+								<div class="color-tip-inner">
+									<i></i>Light Blonde
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" name="color" id="color-field">
+					<div class="row quantity">
+						<label class="col-sm-2">Quantity:</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="quantity"> 
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option> 
+								</select> 
+						</div>
+					</div>
+					<button type="submit" class="btn hi-btn add-to-cart" style="font-size: 20px;padding: 15px 50px;">
+						Add to cart
+					</button>
+				</form> 
+			</div> 
+		</div>
+		<%end%>
+		
+			 
+	</div>
+</div>
+
+
+
+
+    <div class="contains grey">
+      <div class="container">
+	        <i class="ext"></i>
+	        <h3 class="text-uppercase text-center">Money Saving Deals</h3>
+	        <div class="row">
+	        	
+	        	<div class="col-sm-3">
+            <div class="thumbnail product-thumb save-product-thumb">
+              <img src="/assets/save-img.png">
+              
+				<a href="/club_details" class="btn hi-btn btn-details">View Details</a>
+				<div class="caption2" style="height: 368px;text-align: center;padding-left: 10px;padding-right: 10px">
+					<% if @iphone %>
+					<br />
+					<% end %> 
+                <h2 class="wrong_pris">44.95$</h2>
+                <h1><%=@recurrent_price %>$</h1>
+                <form method="POST" class="thumb-footer" action="#"> 
+                	<% if @iphone %>
+	                	<p style="padding-left: 10%;padding-right: 10%">
+							JOIN THE HAIR CLUB AND SAVE $39.95(WITH FREE SHIPPING) ON 38G LARGE BOTTLE.
+						</p>
+                	<%else%>
+	                	<p>
+						JOIN THE HAIR CLUB AND SAVE $39.95(WITH FREE SHIPPING) ON 38G LARGE BOTTLE.
+						</p>
+                	<% end %> 
+                  
+				   <div class="thumb-footer text-center" style="padding: 0px">
+						<a href="/club_details" class="btn btn-addtocart learn-more">learn more</a>
+					</div> 
+                </form>
+              </div> 
+            </div>
+          </div>  
+			 
+        	<% if params[:type] != "c2"%>
+	          <div class="col-sm-3">
+	            <div class="thumbnail product-thumb">
+	              <div class="price-ribbon"><%= get_percentage(119.9, @price_2x) %>% OFF</div>
+	              <div class="thumb">
+	                <img src="/assets/v2_prod.png" class="img-responsive center-block">
+	              </div>
+	              <% unless @iphone %>
+	              <a href="/product_details?type=c2" class="btn hi-btn btn-details">View Details</a>
+	              <% end %>
+	              <div class="caption"> 
+	              	<br />
+                	<h4 class="title">Two 38g bottles</h4>    
+	                <h5 class="price text-center">$<%= number_with_precision(@price_2x, :precision => 2) %> (save $<%= number_with_precision( (119.9-@price_2x), :precision => 2) %>)</h5>
+	                
+	              </div>
+	              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c2_col_dp">
+	              		<input type="hidden" value="c2" name="product_type"/>
+	                  <select class="form-control" id="c2_col_dp" name="color">
+	                    <option>Select a color</option>
+	                    <option>Jet Black</option>
+	                    <option>Black</option>
+	                    <option>Dark Brown</option>
+	                    <option>Brown</option>
+	                    <option>Light Brown</option>
+	                    <option>Auburn</option>
+	                    <option>Blonde</option>
+	                    <option>Light Blonde</option>
+	                  </select>
+	                  <button type="button" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c2_col_dp',event,1)">
+						Add to cart
+					  </button>
+	                </form>
+	            </div>
+	          </div>
+          <%end%>
+          
+          <% if params[:type] != "c3"%>
+          	<div class="col-sm-3">
+	            <div class="thumbnail product-thumb">
+	              <div class="price-ribbon"><%= get_percentage(179.85, @price_3x) %>% OFF</div>
+	              <div class="thumb">
+	                <img src="/assets/v3_prod.png" class="img-responsive center-block">
+	              </div>
+	              <% unless @iphone %>
+	              <a href="/product_details?type=c3" class="btn hi-btn btn-details">View Details</a>
+	              <% end %>
+	              <div class="caption">
+	                <br />
+                	<h4 class="title">Three 38g bottles</h4> 
+	                <h5 class="price text-center">$<%= number_with_precision(@price_3x, :precision => 2) %> (save $<%= number_with_precision( (179.85-@price_3x), :precision => 2) %>)</h5>
+	               </div>
+	              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c3_col_dp">
+	              		<input type="hidden" value="c3" name="product_type"/>
+	                  <select class="form-control" id="c3_col_dp" name="color">
+	                    <option>Select a color</option>
+	                    <option>Jet Black</option>
+	                    <option>Black</option>
+	                    <option>Dark Brown</option>
+	                    <option>Brown</option>
+	                    <option>Light Brown</option>
+	                    <option>Auburn</option>
+	                    <option>Blonde</option>
+	                    <option>Light Blonde</option>
+	                  </select>
+	                  <button type="button" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c3_col_dp',event,1)">
+						Add to cart
+					  </button>
+	                </form>
+	            </div>
+	          </div>
+          <%end%>
+          
+		<% if params[:type] != "c4"%>
+          <div class="col-sm-3  ">
+            <div class="thumbnail product-thumb">
+              <div class="price-ribbon"><%= get_percentage(239.8, @price_4x) %>% OFF</div>
+              <div class="thumb">
+                <img src="/assets/v4_prod.jpg" class="img-responsive center-block">
+              </div>
+              <% unless @iphone %>
+              <a href="/product_details?type=c4" class="btn hi-btn btn-details">View Details</a>
+              <% end %>
+              <div class="caption">
+                <br />
+                <h4 class="title">Four 38g bottles</h4> 
+                <h5 class="price text-center">$<%= number_with_precision(@price_4x, :precision => 2) %> (save $<%= number_with_precision( (239.8-@price_4x), :precision => 2) %>)</h5>              
+                
+              </div>
+              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c4_col_dp">
+              	<input type="hidden" value="c4" name="product_type"/>
+                  <select class="form-control" id="c4_col_dp" name="color">
+                    <option>Select a color</option>
+                    <option>Jet Black</option>
+                    <option>Black</option>
+                    <option>Dark Brown</option>
+                    <option>Brown</option>
+                    <option>Light Brown</option>
+                    <option>Auburn</option>
+                    <option>Blonde</option>
+                    <option>Light Blonde</option>
+                  </select> 
+                  <button type="button" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c4_col_dp',event,1)">
+					Add to cart
+				  </button>
+              </form>
+            </div>
+          </div>
+        <%end%>
+          
+
+		<% if params[:type] != "c5"%>
+          <div class="col-sm-3">
+            <div class="thumbnail product-thumb">
+              <div class="price-ribbon"><%= get_percentage(299.75, @price_5x) %>% OFF</div>
+              <div class="thumb">
+                <img src="/assets/v5_prod.png" class="img-responsive center-block">
+              </div>
+              <% unless @iphone %>
+              <a href="/product_details?type=c5" class="btn hi-btn btn-details">View Details</a>
+              <% end %>
+              <div class="caption">
+              	<br />
+                <h4 class="title">Five 38g bottles</h4>  
+                <h5 class="price text-center">$<%= number_with_precision(@price_5x, :precision => 2) %> (save $<%= number_with_precision( (299.75-@price_5x), :precision => 2) %>)</h5>              
+              </div>
+              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_c5_col_dp">
+              	<input type="hidden" value="c5" name="product_type"/>
+                  <select class="form-control" id="c5_col_dp" name="color">
+                    <option>Select a color</option>
+                    <option>Jet Black</option>
+                    <option>Black</option>
+                    <option>Dark Brown</option>
+                    <option>Brown</option>
+                    <option>Light Brown</option>
+                    <option>Auburn</option>
+                    <option>Blonde</option>
+                    <option>Light Blonde</option>
+                  </select> 
+                  <button type="button" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('c5_col_dp',event,1)">
+					Add to cart
+				  </button>
+                </form>
+            </div>
+          </div>
+        <%end%>
+        
+        <% if params[:type] != "combo"%>
+	        	<div class="col-sm-3">
+	            <div class="thumbnail product-thumb">
+	              <div class="price-ribbon"><%= get_percentage(86.85, @price_combo) %>% OFF</div>
+	              <div class="thumb">
+	                <img src="/assets/combo_prod.jpg" class="img-responsive center-block">
+	              </div>
+	              <% unless @iphone %>
+	              <a href="/product_details?type=combo" class="btn hi-btn btn-details">View Details</a>
+	              <% end %>
+	              <div class="caption">
+	                <h5 class="title">One 38g bottle</h5>  
+	                <h5 class="title">One Fiber Hold Spray</h5>  
+	                <h5 class="title">One Optimizer</h5> 
+	                <h5 class="price text-center">  $<%= number_with_precision(@price_combo, :precision => 2) %> (save $<%= number_with_precision( (86.85-@price_combo), :precision => 2) %>)</h5>                               
+	              </div>
+	              <form method="POST" class="thumb-footer" class="thumb-footer" action="/add_cart" id="form_combo_col_dp">
+	              	<input type="hidden" value="combo" name="product_type"/>
+	                  <select class="form-control" id="combo_col_dp" name="color">
+	                    <option>Select a color</option>
+	                    <option>Jet Black</option>
+	                    <option>Black</option>
+	                    <option>Dark Brown</option>
+	                    <option>Brown</option>
+	                    <option>Light Brown</option>
+	                    <option>Auburn</option>
+	                    <option>Blonde</option>
+	                    <option>Light Blonde</option>
+	                  </select> 
+	                  <button type="button" class="btn btn-addtocart form-control" role="button" onclick="onClickAddToCart('combo_col_dp',event,1)">
+						Add to cart
+					  </button>
+	                </form>
+	            </div>
+	          </div>
+          <%end%>
+
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript"> 
+      // <![CDATA[
+        jQuery('#color-ul').find('li').each(function(){
+          jQuery(this).click(function(e){
+            if(jQuery(this).attr('val')!=undefined){
+              jQuery('#color-ul').find('li').removeClass('cur');
+              jQuery('#color-ul').find('li>div').hide();
+              jQuery(this).addClass('cur');
+              jQuery(this).find('div').show();
+              jQuery('#colorshow').html(jQuery(this).find('div .color-tip-inner').text());
+              jQuery('#color-field').attr('value',jQuery(this).attr('val'));
+              jQuery('#showcolorerror').hide();
+              jQuery('#showcolordefault').hide();
+            }
+            
+          });
+          
+          /* jQuery(this).mouseover(function(){
+            jQuery(this).find('div').show();
+          });
+
+          jQuery(this).mouseout(function(){
+            jQuery(this).find('div').hide();
+          }); */
+        });
+
+
+      jQuery('form').submit(function() {
+        if(jQuery('#color-field').val()=="") {
+          jQuery('#showcolordefault').css({'color':'red','font-weight':'bold'});
+          return false;
+        }
+      }); 
+</script>

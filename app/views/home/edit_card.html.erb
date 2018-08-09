@@ -1,0 +1,54 @@
+<div class="col-sm-12">
+	<h3 class="text-uppercase">Address Book</h3>
+	<form action="/update_card" method="post" data-remote="true">
+		<h4>Your Current Card Details:</h4>
+	<br />
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="col-sm-12">
+				<div class="col-sm-4">
+					Name:
+				</div>
+				<div class="col-sm-3">
+					<%= @customer_card.card_name %>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="col-sm-4">
+					Number:
+				</div>
+				<div class="col-sm-8">
+					XXXX XXXX XXXX <%= @customer_card.card_number.split(//).last(4).join %>
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="col-sm-4">
+					CVV:
+				</div>
+				<div class="col-sm-3">
+					<%= @customer_card.ccv%>
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="col-sm-4">
+					Exp Month:
+				</div>
+				<div class="col-sm-3">
+					<%= @customer_card.exp_month%>/<%= @customer_card.exp_year%>
+				</div>
+			</div>
+		</div>
+
+		<button type="submit" class="btn hi-btn btn-lg pull-right" data-remote="true">
+			Save Changes
+		</button>
+	</form>
+
+</div>
+
+
+
+ 

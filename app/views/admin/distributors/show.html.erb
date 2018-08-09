@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-6 well">
+    <p>
+      <strong>Company Name:</strong>
+      <%= @distributor.company_name %>
+    <p>
+
+    <p>
+      <strong>First Name:</strong>
+      <%= @distributor.first_name %>
+    <p>
+
+    <p>
+      <strong>Last Name:</strong>
+      <%= @distributor.last_name %>
+    <p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= mail_to(@distributor.email) %>
+    <p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= number_to_phone(@distributor.phone) %>
+    <p>
+
+    <p>
+      <strong>Address1:</strong>
+      <%= @distributor.address1 %>
+    <p>
+
+    <p>
+      <strong>Address2:</strong>
+      <%= @distributor.address2 %>
+    <p>
+
+    <p>
+      <strong>Country:</strong>
+      <%= get_country_name(@distributor.country, true) %>
+    <p>
+    	
+	<p>
+      <strong>State:</strong>
+      <%= @distributor.state %>
+    <p>
+    	
+    <p>
+      <strong>City:</strong>
+      <%= @distributor.city %>
+    <p>
+
+    <p>
+      <strong>Zip:</strong>
+      <%= @distributor.zip %>
+    <p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency(@distributor.price / 100.0) %>
+    </p>
+
+    <p>
+      <strong>Approved:</strong>
+      <% if @distributor.approved %>
+        &#x2713;
+      <% else %>
+        &#x2717; <%= link_to 'Approve', approve_admin_distributor_path(@distributor), class: 'btn btn-sm btn-success' %>
+      <% end %>
+    <p>
+
+    <p>
+      <%= link_to icon_text('Edit', 'glyphicon glyphicon-pencil'), edit_admin_distributor_path(@distributor), class: 'btn btn-sm btn-primary' %>
+      <%= link_to icon_text('Past Orders', 'glyphicon glyphicon-time'), admin_distributor_orders_path(@distributor), class: 'btn btn-sm btn-primary' %>
+      <%= link_to icon_text('New Order', 'glyphicon glyphicon-credit-card'), new_admin_distributor_order_path(@distributor), class: 'btn btn-sm btn-success' %>
+    </p>
+  </div>
+</div>

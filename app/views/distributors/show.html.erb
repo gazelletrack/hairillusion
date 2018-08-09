@@ -1,0 +1,159 @@
+<div id="checkoutForm" class="row" style="padding-left: 30px;color: #fff">
+  <div class="col-md-6">
+    <a class="none" id="buynow">&nbsp;</a>
+    <h2>Order Form</h2>
+
+    <%= form_for @order, html: { class: 'form-horizontal' }, :remote=>true do |f| %>
+      <%= f.hidden_field :orderer_id %> 
+      <%= hidden_field_tag :shipment_name, '' %>
+      <%= hidden_field_tag :shipment_car, '' %>
+      <%= hidden_field_tag :shipment_price, '' %> 
+      <%= hidden_field_tag :total_price, '' %> 
+      <%= hidden_field_tag :shipment_selected, false %> 
+      <%= hidden_field_tag :get_shipping, true %>
+      
+      <table class="table table-bordered table-condensed">
+        <thead>
+          <th>Product</th>
+          <th>Quantity</th>
+        </thead>
+        <tbdoy>
+          <%= f.fields_for :order_items do |oi| %>
+            <tr>
+              <td>
+                <%= oi.object.product.name %>
+                <%= oi.hidden_field :product_id %>
+              </td>
+              <td><%= oi.number_field :quantity, min: 0, step: 1, class: 'form-control required order-quantity', :onchange=>"onChangeDQty('#{@distributor.id}')", :id=>"#{oi.object.product.id}" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="payment"> 
+     		
+ 		<div id="shippingPrefDiv"> 
+ 		</div> 
+      	<h5 style="color: #ff0000">Distributors must order at least $150 worth of combine product.(Shipping price is based on country)</h5> 
+      	<br />
+        <h4>CREDIT CARD INFORMATION</h4>
+        <div class="form-group" >
+          <div class="col-md-offset3 col-md-8">
+            <%= image_tag 'visa_48.png' %>
+            <%= image_tag 'mastercard_48.png' %>
+            <%= image_tag 'discover_48.png' %>
+            <%= image_tag 'amex_48.png' %>
+          </div>
+        </div>
+        <%= fields_for @credit_card do |cc| %>
+          <%= control_group(@credit_card, :name, label: 'Name on Card') do %>
+            <%= cc.text_field :name, class: 'form-control required', autocomplete: :off %>
+          <% end %>
+
+          <%= control_group(@credit_card, :number, label: 'Card Number') do %>
+            <%= cc.number_field :number, class: 'form-control required', autocomplete: :off, :size => 20, :requied=>"true"%>
+          <% end %>
+
+          <%= control_group(@credit_card, :cvc, label: 'CVC') do %>
+            <div class="row">
+              <div class="col-md-9">
+                <%= cc.number_field :cvc, class: 'form-control required', autocomplete: :off, :size => 4 %>
+              </div>
+              <div class="col-md-3">
+                <%= image_tag 'cvv.png', style: 'position:relative; top:7px;' %>
+              </div>
+            </div>
+          <% end %>
+
+          <%= control_group(@credit_card, :exp_month, label: 'Expiration') do %>
+            <div class="row">
+              <div class="col-md-4">
+                <%= select_month(nil, { :prefix => :credit_card, :field_name => :exp_month, use_month_numbers: true, prompt: 'MM' }, { class: 'form-control required' }) %>
+              </div>
+              <div class="col-md-8">
+                <%= select_year(nil, { :prefix => :credit_card, :field_name => :exp_year, start_year: Time.now.year, end_year: Time.now.year + 10, prompt: 'YYYY' }, { class: 'form-control required' }) %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+		<%= hidden_field_tag :totalPrice, 0 %>
+      <div class="form-group">
+        <div style="text-align:center;" class="col-md-12">
+          <p>Your Product Price is <strong>$<span id="order-subtotal-price">0.00</span></strong></p>
+          <p>Shipping Cost <strong>$<span id="order-shipping-price">0.00</span></strong></p>
+           <p>Your Total Price is <strong>$<span id="order-total-price">0.00</span></strong></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div style="text-align:center;" class="col-md-12"> 
+          <%= link_to "Order Now",'#', :class=>"btn btn-info", :onclick=>"onSubmit(event)", :id=>"distOrderButton"%>
+          <div id="order-submit-spinner" style="display:none"><h4>Please Wait <%= image_tag 'ajax-loader.gif' %></h4></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+ <div class="col-md-6" style="padding: 40px">
+ 	<%= link_to "Log out" , logout_distributors_url, :style=>"float:right;font-weight:bold;color:#ff0000;padding-right:30px" %>
+ 	<h4> Your current shipping address:</h4> 
+ 	<br>
+ 	<h5> <%= @distributor.first_name %> <%= @distributor.last_name %></h5>
+ 	<h5> <%= @distributor.address1 %> </h5> 
+ 	<h5> <%= @distributor.address2 %> </h5>
+ 	<h5> <%= @distributor.city %> </h5>
+ 	<h5> <%= @distributor.state %> <%= get_country_name(@distributor.country, false) %></h5>
+ 	<h5> <%= @distributor.zip %> </h5> 
+ 	<h5>Phone: <%= @distributor.phone %> </h5>
+ 	<h5>Tax Info: <% if @distributor.tax_info.blank? %> Please email us your tax id <%else%> <%= @distributor.tax_info %> <%end%> </h5>
+
+ 	<br />
+ 	<h5>
+ 	<b style="color: #ff0000"> If address needs to be updated, Please contact us: support@buyhairilusion.com</b></h5>
+ 	<br /> 
+	<h5>You can combine different sizes and colors as well as the fiber hold spray. </h5>
+ </div>
+ </div>	 
+ 
+<script type="text/javascript">
+	function onSubmit(event) {
+		event.preventDefault();
+		if ($("#totalPrice").val() > 0) {
+			 
+			if (parseFloat($("#totalPrice").val()) < 150) {
+				alert("Wholesalers must order at least $150 worth of combine product");
+			} 
+			else 
+			{
+				 
+					document.getElementById("get_shipping").value = false;
+					$("#distOrderButton").hide()
+					$("#order-submit-spinner").show()
+					$('#new_order').submit(); 
+			}  
+		} else {  
+			alert("Please choose products first"); 
+		}
+	}
+
+	function onChangeDQty(distributor_id) { 
+		
+		params = []
+		$.each($(".order-quantity"), function(index, value) {
+			params.push({
+				product_id : $(this).attr('id'),
+				qty : $(this).val()
+			})
+		}); 
+		$.ajax({
+			type : "get",
+			url : "/get_total_price",
+			data : {
+				distributor_id : distributor_id,
+				products : params
+			}
+		});
+	}
+
+</script>
+  
+  

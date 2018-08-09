@@ -1,0 +1,1000 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #242424;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.h1, .h2, .h3, h1, h2, h3 { margin-bottom: 30px; }
+
+.top {
+	background-color: #100d0e;
+	color: #59be8a;
+	padding: 15px 0 5px;
+	font-size: 12px;
+}
+
+.top a {
+	color: #59be8a;
+	text-decoration: none;
+}
+
+.top a:hover, .top a:focus {
+	color: #FFFFFF;
+}
+
+.page-about-us .contains p, .page-about-us .contains li, .page-about-us .contains table,
+.page-content .contains p, .page-content .contains li, .page-content .contains table {
+	/*font-size: 12px;
+	letter-spacing: 2px;*/
+}
+
+.hi-navbar {
+	background: transparent;  
+	border: none;
+	border-radius: 0;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.hi-header {
+	background-color: #FFFFFF;
+	margin-bottom: 0;
+}
+
+.hi-header h1 {
+	font-size: 40px;
+	color: #000000;
+	letter-spacing: 5px; 
+	margin-bottom: 40px;
+}
+
+.hi-header h3 {
+	letter-spacing: 4px;
+	margin-bottom: 40px;
+}
+
+.hi-header p {
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+
+.hi-header .btn.btn-buy-now {
+	background-color: #41d390;
+    border-color: #41d390;
+    border-radius: 0;
+    padding: 15px 60px;
+    font-size: 21pt;
+    letter-spacing: 5px;
+    margin-top: 60px;
+}
+
+.row-inverted {
+	color: #FFF;
+	padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.contains {
+	background-color: #FFFFFF;
+	padding-top: 15px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.contains.grey {
+	background-color: #e9ebeb;
+}
+
+.contains.black {
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+.contains.dark {
+	background-color: #292929;
+	color: #FFFFFF;
+}
+
+.contains h3.title {
+	color: #000000;
+}
+
+.row-bestsellers .col-sm-3 {
+	float: none;
+	display: inline-table;
+}
+
+.row-bestsellers .thumbnail {
+	border-radius: 0;
+}
+
+.row-bestsellers .thumbnail > img {
+	margin-top: 40px;
+	margin-bottom: 30px;
+	height: 150px;
+}
+
+.row-bestsellers .thumbnail > .caption > p {
+	color: #000000;
+    font-size: 12px;
+}
+
+.row-bestsellers .thumbnail > .caption > form {
+	padding: 0 20px;
+}
+
+.product-thumb > .caption > .title {
+	text-overflow: ellipsis;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+	line-height: 1.5;
+}
+
+.product-thumb > .caption > .price {
+	position: relative;
+	height: 30px;
+}
+
+.product-thumb > .caption > .price > .value {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+}
+
+.product-thumb > .btn-details {
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+}
+
+.product-thumb:hover  .btn-details{
+	display: inline;
+}
+
+.col-sm-4 .product-thumb > .btn-details {
+	left: 30%;
+}
+
+
+.thumbnail .caption {
+	min-height: 124px;
+	    max-height: 159px;
+
+}
+
+.thumbnail .caption2 {
+	height: 200px;
+
+}
+
+.thumbnail .caption3 {
+	min-height: 180px;
+	    max-height: 180px;
+
+}
+
+.product-thumb > .thumb {
+	text-align: center;
+	min-height: 300px;
+	max-height: 300px;
+	padding-top: 30px;
+	    overflow: hidden;
+	        vertical-align: middle;
+    display: list-item;
+}
+
+.product-thumb .thumb-footer {
+	padding: 9px 30px;
+}
+
+.product-thumb .price-ribbon{position:absolute;top:0;right:-4px;width:auto;font-size:14px;text-transform:uppercase;font-weight:300;padding:6px 20px 6px 15px;color:#fff;background-color:#D91E18;text-shadow:0 1px 2px #bbb;-webkit-box-shadow:0 2px 4px #888;-moz-box-shadow:0 2px 4px #888;box-shadow:0 2px 4px #888}
+.product-thumb .price-ribbon:after{content:' ';position:absolute;width:0;height:0;right:0;top:100%;border-width:5px 10px;border-style:solid;border-color:#64120f transparent transparent #64120f}
+
+/*color*/
+.color-black {background:url(../images/hair-colors/black-hair-fiber.jpg);}
+.color-dark-brown {background:url(../images/hair-colors/dark-brown-hair-fiber.jpg);}
+.color-medium-brown {background:url(../images/hair-colors/medium-brown-hair-fiber.jpg);}
+.color-light-brown {background:url(../images/hair-colors/light-brown-hair-fiber.jpg);}
+.color-blonde {background:url(../images/hair-colors/blonde-hair-fiber.jpg);}
+.color-gray {background:url(../images/hair-colors/gray-hair-fiber.jpg);}
+.color-dark-gray {background:url(../images/hair-colors/dark-gray-hair-fiber.jpg);}
+.color-white {background:url(../images/hair-colors/white-hair-fiber.jpg);}
+.color-auburn {background:url(../images/hair-colors/auburn-hair-fiber.jpg);}
+ 
+
+.hi-color-jetblack { background: url(../assets/hair-colors/jb.jpg);}
+.hi-color-black { background: url(../assets/hair-colors/bl.jpg);}
+.hi-color-darkbrown { background: url(../assets/hair-colors/db.jpg);}
+.hi-color-brown { background: url(../assets/hair-colors/br.jpg);}
+.hi-color-lightbrown { background: url(../assets/hair-colors/lb.jpg);}
+.hi-color-red { background: url(../assets/hair-colors/red.jpg);}
+.hi-color-blonde { background: url(../assets/hair-colors/pb.jpg);}
+.hi-color-lightblonde { background: url(../assets/hair-colors/dpb.jpg);}
+
+.color-item {margin:25px 0 50px;}
+	.color-item li {display:inline-block; *display:inline; *zoom:1; position:relative; width:70px; height:70px; vertical-align:top; border-radius:40px; text-align:center; cursor:pointer; font-size:0;}
+	.color-item li.cur {width:64px; height:64px;; border:3px solid #27b09e;}
+	.color-item li.color-sold-out-tip {margin:0; width:auto; line-height:64px; font-size:16px; cursor:text;}
+	.color-tip {margin-left:-70px; position:absolute; bottom:-40px; left:50%; z-index:1; width:140px; height:40px; line-height:40px;}
+		.color-tip-inner {position:relative; *height:42px; background-color:#fff; border:1px solid #b6b6b6; border-radius:5px; font-size:12px;}
+		.color-tip-inner i {margin-left:-16.5px; position:absolute; top:-16px; left:50%; z-index:10; display:block; width:33px; height:16px; background:url(../assets/ico-arrow-gray-up.png) center 5px no-repeat;}
+.ck-step-guide {padding:30px 0;}
+.ck-step-guide li {margin-right:20px; width:17%;}
+.ck-step-guide dt {text-indent:-100000px;}
+.ck-step-guide a, .ck-step-guide a:visited {color:#71706f; text-decoration:none;}
+.ck-step-guide {border:none;}
+	.ck-step-guide h1 {margin-bottom:30px; color:#40403e;}
+	.ck-step-guide li {display:inline-block; *display:inline; *zoom:1; position:relative; width:21%; vertical-align:top;}
+	.ck-step-guide .ico-ok {display:block; position:absolute; top:4px; left:45px; width:19px; height:18px; background:url(../images/ico-ok.png) 0 0 no-repeat;}
+	.ck-step-guide li.step-guide-finalize {margin-right:0;}
+	.ck-step-guide li i {display:block; margin-bottom:15px; width:25px; height:25px; line-height:22px; border-radius:16px; text-align:center; background-color:#6B6B6A; color:#fff; font-weight:700;}
+	.ck-step-guide dt {margin-bottom:5px; height:55px; line-height:55px; font-weight:700; font-size:18px;}
+
+.step-guide-login dt {padding-left:65px; background:url(../images/step-guide-login.png) 0 0 no-repeat;}
+	.step-guide-price dt {padding-left:50px; background:url(../images/step-guide-price.png) 0 0 no-repeat;}
+	.step-guide-cart dt {padding-left:65px; background:url(../images/step-guide-cart.png) 0 0 no-repeat;}
+	.step-guide-set dt {padding-left:65px; background:url(../images/step-guide-set.png) 0 0 no-repeat;}
+	.step-guide-ship dt {padding-left:90px; white-space:nowrap; background:url(../images/step-guide-ship.png) 0 0 no-repeat;}
+	.step-guide-finalize dt {padding-left:65px; background:url(../images/step-guide-finalize.png) 0 0 no-repeat;}
+.hi-products .product-thumb > img {
+	max-height: 300px;
+}
+
+.hi-product-details h1.title {
+	font-size: 45px;
+}
+
+.hi-product-details .details {
+	font-size: 14px;
+} 
+.hi-product-details .details label {
+	width: 50px;
+}
+
+.hi-product-details .quantity label {
+	margin-top: 8px;
+}
+.hi-checkout {
+	font-size: 14px;
+}
+
+.hi-checkout .panel-title{
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.hi-checkout .panel {
+	border-radius: 0;
+	border: none;
+}
+
+.hi-checkout .panel-title a:hover {
+	color: #59be8a;
+}
+
+.hi-checkout .panel-title a:focus, .hi-checkout .panel-title a:hover {
+	text-decoration: none;
+}
+
+.hi-checkout h5.title { font-weight: bolder; }
+
+.hi-checkout p {
+	margin-bottom: 30px;
+}
+
+.hi-checkout label {
+	font-weight: normal;
+}
+
+.hi-checkout .form-control {
+	margin-bottom: 15px;
+}
+
+.hi-checkout .panel-default>.panel-heading+.panel-collapse>.panel-body {
+	border-top-color: #59be8a;
+}
+
+.hi-checkout table .img-thumbnail {
+	height: 80px;
+}
+
+.hi-checkout table.table>tbody>tr>td{
+	vertical-align: middle;
+}
+
+.hi-checkout .panel-heading > .panel-title > .edit {
+	display: none;
+}
+
+.hi-checkout > .done .panel-heading > .panel-title > .edit {
+	display: inline-block;
+}
+
+.btn-addtocart, .hi-btn {
+	color: #FFFFFF;
+	background-color: #41d390;
+	text-transform: uppercase;
+    margin: 15px 0;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.newsletter-form  {
+	margin-top: 20px;
+}
+
+.newsletter-form input[type="text"] {
+	border: 4px solid #a1a1a1;
+    padding: 10px;
+    background-color: #eceded;
+    width: 80%;
+    font-size: 14px;
+}
+
+.newsletter-form input[type="submit"] {
+	border-radius: 0;
+    background-color: #a1a1a1;
+    margin-top: -5px;
+    color: #000;
+    padding: 10px 18px;
+    font-size: 18px;
+}
+
+footer {
+	background-color: #303030;
+	color: #767573;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 10px;
+}
+
+table.hi-cart-table td > .img-thumbnail {
+	max-width: 60px;
+	max-height: 60px;
+	margin-right: 10px;
+}
+
+table.hi-cart-table td > .btn-link {
+	font-size: 10px;
+	position: absolute;
+	padding: 0 5px;
+}
+
+table.hi-cart-table td {
+    vertical-align: middle !important;
+    position: relative;
+}
+
+
+
+
+
+
+table.hi-orders2 td > .img-thumbnail {
+	max-width: 60px;
+	max-height: 60px;
+	margin-right: 10px;
+}
+
+table.hi-orders2 td > .btn-link {
+	font-size: 10px;
+	position: absolute;
+	padding: 0 5px;
+}
+
+table.hi-orders2 td {
+    vertical-align: middle !important;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.form-contactus .control-label {
+	text-align: left;
+}
+
+.hi-highlight { color: #41d390; }
+
+.link {
+	font-weight: bold;
+	color: #41d390;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+.link.black {
+	color: #000000;
+}
+
+.link.white {
+	color: #FFFFFF;
+}
+
+.link.black:hover,.link.white:hover {
+	color: #41d390;
+}
+
+a.link:hover {text-decoration: none;}
+
+.text-grey { color: #949393; }
+
+.font-weight-normal { font-weight: normal; }
+
+.ext {
+	margin-left: -20px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    z-index: 2;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #fff;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/* bootstrap overrides */
+.img-thumbnail {
+	border: none;
+	padding: 0;
+}
+.carousel-control.left, .carousel-control.right {
+	background: none;
+}
+ 
+.btn.focus, .btn:focus, .btn:hover {
+    background: #FFF;
+    border-color: #41d390;
+}
+
+ul.social-icons {
+	margin-bottom: 0;
+	    margin-top: 10px;
+}
+ul.social-icons > li {
+	padding: 0;
+}
+ul.social-icons > li > a {
+	background-color: #646361;
+    width: 30px;
+    border-radius: 100%;
+    height: 30px;
+    color: #242424;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+        padding-left: 2px;
+}
+
+.portfolio-content .well {
+	padding: 5px;
+	border-radius: 0;
+}
+
+.highlight-title {
+	border-bottom: 1px solid #59be8a;
+}
+.font-normal {
+	font-weight: normal;;
+}
+
+.bold-title {
+	font-weight: bold;
+}
+.bold-title > .btn-link {
+	text-decoration: none;
+    margin-top: -7px;
+}
+.margin-top-30 {
+	margin-top: 30px;
+}
+
+/* For desktop: */
+@media screen and (min-width: 768px) {
+    
+    .top {
+
+    }
+    .hi-navbar {
+    	padding: 30px;
+    }
+
+    .hi-navbar .navbar-brand>img {
+		margin-top: -22px;
+	}
+
+	.top .list-inline > li:last-child {
+		padding-right: 30px;
+	}
+
+	.top .list-inline > li {
+		padding: 0 20px;
+	}
+
+	.auth .registration, .form-contactus {
+		border-left: 1px #CCCCCC dashed;
+	}
+
+	.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+		margin-top: -20px;
+		font-size: 50px;
+		font-weight: normal;
+		color: #000;
+	}
+
+	.product-thumb .quantity{
+		margin-left: -14px;
+		padding: 0;
+	}
+
+	.product-thumb .thumb-footer label {
+		position: absolute;
+		left: 0;
+		top: -18px;
+	}
+	.product-thumb .thumb-footer label.color {
+		left: 15px;
+	}
+}
+
+/* For mobile: */
+@media screen and (min-width : 320px) and (max-width : 480px) {
+
+	.hi-navbar .navbar-brand {
+		height: auto;
+	}
+
+	.hi-navbar .navbar-brand > img {
+		width: 100%;
+	}
+
+	.newsletter-form input[type="text"] {
+		width: 60%;
+	}
+
+	.row-bestsellers .col-sm-3 {
+		width: 100%;
+	}
+
+	.hi-product-details .add-to-cart {
+		width: 100%;
+	}
+
+}
+
+div.whiteColorDiv
+{
+	color: #fff;
+	width:100%;
+	text-align: center;
+	padding:40px;
+}
+
+h5.paymentOption
+{
+	font-weight: bold;
+	display: inline;
+	color: #000;
+	font-size: 20px;
+}
+
+.payment-list__item {
+    display: inline-block;
+    margin: 0.5em 0.5em 0.5em 0;
+}
+
+.payment-list__item {
+    position: relative;
+    display: block;
+    margin: 0 0 0.5em;
+    background-color: #ffc439;
+    background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 100%);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+   }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+.newsletter-login {
+    background: rgba(0, 0, 0, 0) url("../images/hairillusion.jpg") no-repeat scroll center center / cover ;
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+.newsletter-login h1{ color:#fff; font-size:30px; margin:0 0 20px;}
+.newsletter-login h3 {
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+}
+.newsletter-login p {
+	color:#fff;
+	letter-spacing: 1px;
+}
+.newsletter-login-form {
+    margin-top: 20px;
+}
+.newsletter-login-form input[type="email"] {
+    background-color: #eceded;
+    border: 4px solid #a1a1a1;
+    font-size: 14px;
+    padding: 10px;
+    width: 80%;
+}
+.newsletter-login-form input[type="submit"] {
+    background-color: #a1a1a1;
+    border-radius: 0;
+    color: #000;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px 18px;
+}
+#active-popup {
+  background-color: rgba(52,73,94, 0.7);
+  position: absolute;
+  width: 100%;
+  heighT: 100% !important;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#popup-container {
+  width: 45%;
+  height: 65%;
+  margin: 0 auto;
+  margin-top: 5%;
+  position: fixed;
+  left: 28%;
+  z-index: 999;
+  top: 0;
+  display: none;
+}
+
+.modal-content {
+    background: url(../assets/POPUP.png) no-repeat center center;
+    box-shadow: 0 5px 15px rgba(225, 225, 225, 0.1);
+    float: left;
+	min-height:310px;
+	min-width:500px;
+    padding: 0 0 0px;
+    position: relative;
+    text-align: center;
+}
+.model-body-right {
+    display: inline-block;
+    margin: 48% 0 0 13px;
+    text-align: left;
+    width: 100%;
+}
+.newsletter-popup input[type="email"] {
+    background-color: #f7f7f7;
+    border: 4px solid #5e5c5d;
+    font-size: 12px;
+    margin: 0 0 5%;
+    padding: 6px 10px;
+    width: 93%;
+}
+.newsletter-popup input[type="submit"] {
+    background-color: #41d390;
+    border-radius: 0;
+    color: #fff;
+    font-size: 12px;
+	font-weight:bold;
+    margin-top: -5px;
+    padding: 5px 19px;
+}
+.newsletter-popup input[type="submit"]:hover{
+	color:#41d390;
+	border-color:#fff;
+	background:#fff;
+}
+.modal-body-left {
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+.model-body-right {
+    display: inline-block;
+    width: 100%;
+}
+.modal-content img{
+	margin:0 0 20px;
+}
+#popup-window { position: relative; }
+
+.modal-content h1,
+.modal-content p { color: #fff; }
+
+.modal-content p { padding: 0; text-align:center; margin:0; font-size:16px; letter-spacing:1px; }
+
+#popup-container a.close {
+  position: relative;
+  float: right;
+  top: -15px;
+  right: -7px;
+  opacity:1;
+  z-index: 99;
+  font-weight: bold;
+  font-size: 16px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 2px 5px 2px 6px;
+  line-height: 1em;
+  text-align: center;
+  background: #242424;
+  border: 4px solid #fff;
+  cursor: pointer;
+  color:#fff;
+}
+.modal-content h5 a {
+    background-color: #41d390;
+    border-color: #41d390;
+    border-radius: 0;
+    color: #fff;
+	font-weight:600;
+    font-size: 12pt;
+    letter-spacing: 0px;
+    margin-top: 20px;
+    padding: 10px 13px;
+}
+.modal-content h5 a:hover{
+	border:1px solid #fff;
+	padding: 10px 13px;
+}
+.modal {
+background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+}
+.modal-content p.hilihht_text {
+	text-transform: uppercase;
+    font-size: 55px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+	color:#41d390;
+    text-align: center;
+}
+.modal-header > h1 {
+    font-weight: bold;
+	margin-bottom:20px;
+    text-transform: uppercase;
+}
+.hilihht_text > span {
+    font-size: 100px;
+	line-height:94px;
+}
+.modal-dialog {
+    margin: 10% auto 0;
+	width:500px;
+}
+.close {
+    color: #fff;
+    opacity: 1;
+}
+
+.sub_save {
+    text-align: center;
+	background: url(../assets/subsc_bg.png) no-repeat center center;
+	padding:0px 0 60px;
+}
+.sub_save h1 {
+    color: #fff;
+    font-size: 59px;
+    font-weight: bold;
+	margin:0 0 15px;
+    letter-spacing: -2px;
+}
+.sub_save h2 {
+    color: #c3c0c0;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: line-through;
+}
+.sub_save p{
+	font-size:18px;
+	color:#fff;
+	letter-spacing:0;
+	margin:20px 0 30px;
+	line-height:24px;
+}
+
+.sub_save .btn-suh {
+    background-color: #41d390;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin: 15px 0;
+    padding: 10px 20px;
+	text-decoration:none;
+    text-transform: uppercase;
+}
+.save-product-thumb{
+	background:url(../assets/subsc_bg.png) no-repeat center center;
+	padding:0 4px 8px;
+}
+.caption2 h2.wrong_pris {
+    color: #c3c0c0;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: line-through;
+}
+.caption2 h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.caption2 p {
+    color: #fff;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 1023px) {
+#popup-container {
+    display: none;
+    height: 65%;
+    left: 18%;
+    margin: 5% auto 0;
+    position: fixed;
+    top: 0;
+    width: 65%;
+    z-index: 999;
+}
+.newsletter-login h1 {
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin: 0 0 6px;
+}
+.newsletter-login {
+    background: #242424 url("../assets/hairillusion.jpg") no-repeat scroll center center / 100% auto;
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+.modal-content {
+    background: #181617 url("../assets/POPUP.png") no-repeat scroll center center / 100% auto;
+    box-shadow: 0 5px 15px rgba(225, 225, 225, 0.4);
+    float: left;
+    min-height: 300px;
+    min-width: 500px;
+    padding: 0 0 15px;
+    position: relative;
+    text-align: center;
+}
+.modal-dialog {
+    margin: 6% auto 0;
+    width: 500px;
+}
+}
+@media screen and (min-width : 320px) and (max-width : 480px) {
+#popup-container {
+    display: none;
+    height: 65%;
+    left: 2%;
+    margin: 5% auto 0;
+    position: fixed;
+    top: 0;
+    width: 95%;
+    z-index: 999;
+}
+.modal-content > h1 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+.model-body-right {
+    display: inline-block;
+    width: 100%;
+}
+.modal-body-left {
+    display: inline-block;
+    float: left;
+    width: 100%;
+}
+.modal-content {
+    background: rgba(0, 0, 0, 0) url("../assets/POPUP.png") no-repeat scroll center center / 100% auto;
+    box-shadow: 0 5px 15px rgba(225, 225, 225, 0.4);
+    float: left;
+    min-height: 292px;
+    min-width: 305px;
+    padding: 0 0 15px;
+    position: relative;
+    text-align: center;
+}
+.modal-dialog {
+    margin: 6% auto 0 2.5%;
+	width: 280px;
+}
+.modal-content h5 a {
+    background-color: #41d390;
+    border-color: #41d390;
+    border-radius: 0;
+    color: #fff;
+    font-size: 10pt;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-top: 70px;
+    padding: 5px 13px;
+}
+.modal-body h5 {
+    margin-bottom: 0;
+    margin-left: 41%;
+    margin-top: 46%;
+}
+.newsletter-popup {
+    margin-top: 20px;
+}
+.modal-content {
+    background: #181617 url("../assets/POPUP.png") no-repeat scroll center center / 100% auto;
+    box-shadow: 0 5px 15px rgba(225, 225, 225, 0.2);
+    float: left;
+    min-height: 292px;
+    min-width: 305px;
+    padding: 0 0 15px;
+    position: relative;
+    text-align: center;
+}
+.newsletter-popup input[type="email"] {
+    background-color: #eceded;
+    border: 4px solid #a1a1a1;
+    font-size: 12px;
+    margin: 0 0 4%;
+    padding: 5px 10px;
+    width: 67%;
+}
+.model-body-right {
+    display: inline-block;
+    margin: 42% 0 0 97px;
+    text-align: left;
+    width: 100%;
+}
+.modal-content h5 a:hover{padding: 5px 13px;}
+}

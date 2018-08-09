@@ -1,0 +1,3 @@
+$("#listTable").html(" <%= escape_javascript( render 'cart') %>");  
+$("#buy_url").val('<%=@url%>')
+$("#products_size").val('<%=session[:cart].size%>')

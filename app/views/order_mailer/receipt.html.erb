@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns"http//www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head> 
+  <title>Thank you for your order</title>
+
+  <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+  <style type="text/css">
+    body {
+      margin:    0 auto;
+      max-width: 550px;
+      padding: 20px 0;
+    }
+    table.gridtable {
+      width: 100%;
+      font-family: verdana,arial,sans-serif;
+      font-size:11px;
+      color:#333333;
+      border-width: 1px;
+      border-color: #666666;
+      border-collapse: collapse;
+    }
+    table.gridtable th {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #dedede;
+    }
+    table.gridtable td {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <strong>Thank your for your order</strong>
+  <table class="gridtable" border="1">
+    <thead>
+      <tr>
+        <th width="60%">Order #</th>
+        <th width="40%" colspan="2"><%= @order.id %></th>
+      </tr>
+      <tr>
+        <th width="60%"></th>
+        <th width="20%">Price</th>
+        <th width="20%">Total</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>
+          <strong>Questions?</strong>
+          Contact Hair Illusion at<br/>
+          <%= mail_to('support@hairillusion.com') %><br/>
+        </th>
+        <th colspan="2">
+          <strong>Hair Illusion</strong>
+          <%= link_to 'www.buyhairillusion.com', root_url %><br/>
+        </th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <% @order.order_items.each do |order_item| %>
+        <tr>
+          <td>
+          	<% if order_item.product_type == "DistributorProduct" %>
+          		<%= order_item.product.name %> (x<%= order_item.quantity %>)</td>
+          	<%else%>
+          		<%= order_item.product.description %> (x<%= order_item.quantity %>)</td>
+          	<% end %>
+          	
+          <td><%= number_to_currency(order_item.price / 100.0) %></th>
+          <td><strong><%= number_to_currency(order_item.total / 100.0) %></strong></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>Shipping</td>
+        <td></td>
+        <td><strong><%= number_to_currency(@shipping_cost / 100.0) %></strong></td>
+      </tr> 
+      
+		<% if (@order.discount && @order.discount.to_f>0 ) %>
+	      <tr>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">Discount</td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"></td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><strong><%= number_to_currency(@order.discount) %></strong><%= @order.coupon_code %></td>
+	      </tr>      
+      <%end%>
+      
+      <tr>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;">Total</td>
+	        <td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"></td>
+        	<td style="border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff;"><strong><%= number_to_currency( @order.total_price_for_email) %></strong></td>
+ 
+      </tr>
+    </tbody>
+  </table>
+</body>

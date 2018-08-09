@@ -1,0 +1,86 @@
+<div class="contains">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-5 col-sm-offset-1">
+				<h3 class="text-uppercase text-center">Login</h3>
+				<p>
+					If you have an account with us, please log in.
+				</p>
+				<form class="form-horizontal" action="/process_login" data-remote="true" method="post" id="loginForm">
+					<div class="form-group">
+						<label for="login_email" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-9">
+							<input type="email" class="form-control" name="email" required="true">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="login_password" class="col-sm-2 control-label">Password</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" name="password" required="true">
+							<input type="hidden" name="from" value="<%=params[:from]%>">
+						</div>
+					</div> 
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-9">
+							<%= link_to "Forgot password?", '/forgot_password?from=user'%>
+							<br />
+							<button type="submit" class="btn hi-btn btn-lg" data-remote = "true" >
+								Sign in
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-5 registration">
+				<h3 class="text-uppercase text-center">Registration</h3>
+				<p>
+					By creating an account with our store, you will be able to track your old orders, move through the checkout process faster and more.
+				</p>
+				<form class="form-horizontal" action="/create_customer" method="post" data-remote = "true">
+					<div class="form-group">
+						<label for="register_name" class="col-sm-3 control-label">First Name</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="first_name" required="true">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="register_name" class="col-sm-3 control-label">Last Name</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="last_name" required="true">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="register_email" class="col-sm-3 control-label">Email</label>
+						<div class="col-sm-9">
+							<input type="email" class="form-control" name="email" required="true">
+							<input type="hidden" name="from" value="<%=params[:from]%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="register_password" class="col-sm-3 control-label">Password</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" name="password" required="true">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="register_cpassword" class="col-sm-3 control-label">Confirm Password</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" name="password_confirmation" required="true">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<button type="submit" class="btn hi-btn btn-lg" data-remote = "true">
+								Sign Up
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

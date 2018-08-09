@@ -1,0 +1,7 @@
+<div class="row">
+	<% unless params[:from].present? %>
+  		<%= render partial: 'form' %> 
+  	<%end%>
+  	<br />
+  <%= render partial: 'login' %>
+</div>

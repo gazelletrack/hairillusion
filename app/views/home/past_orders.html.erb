@@ -1,0 +1,62 @@
+
+<div class="col-sm-12">
+	<h3 class="text-uppercase">My Past Orders</h3>
+	<%if @orders.size > 0 %>
+	<div class="row">
+		<div class="col-sm-12">
+			<form class="table-responsive"">
+			<table class="table hi-cart-table">
+			<thead>
+			<tr>
+			<th>Product</th>
+			<th width="20%" class="text-right">Unit Price</th>
+			<th width="6%" class="text-center">Qty.</th>
+			<th width="6%" class="text-center">Date.</th>
+			<th width="10%" class="text-right">Total</th>
+			<th width="25%" class="text-right">Status</th>
+			</tr>
+			</thead>
+			<tbody>
+				<% @orders.each do |order| %>
+					<tr>
+						<td>Order Id:</td>
+						<td colspan="5"><%=order.id%></td>
+					</tr>
+					<% order.order_items.each_with_index do |order_item, index| %>
+					<tr>
+						<td> Hairillusion <%=order_item.product_name %> </td>
+						<td class="text-right">$<%=order_item.price.to_f/100 %></td> 
+						<td class="text-center"> <%=order_item.quantity %> </td>
+						<td class="text-center"> <%=order_item.created_at.strftime("%d/%m/%Y") %> </td>
+						<td class="text-right"> 
+							<% if (index+1) == (order.order_items.size) %>
+								<%= number_to_currency(order.shipping_price.to_f + order.total_price.to_f ) %></td>
+							<% end %>
+						<td class="text-center"></td>
+					</tr>
+					<%end%>
+					<tr>
+						<td colspan="5">
+							<% unless order.tracking_number.blank? %>
+								Shipping Carrier: <%= order.shipping_code %> &nbsp; Tracking Number: <%= order.tracking_number %>
+							<%end%>
+						</td>
+						<td class="text-right" style="padding-bottom: 40px;"><% if order.shipment_id %>
+								<span class="label label-success">Completed on <%= order.shipment.created_at.strftime('%a, %d %b %Y') %></span> 
+							<%else %>
+								
+								<span class="label label-danger">Not yet shipped</span> 
+
+							<%end%>
+						</td>
+					</tr> 
+				<%end%>
+			</tbody>
+			</table>
+			</form>
+		</div>
+	</div>
+	<%else%>
+		<h5>You dont have any past orders.</h5>
+	<%end%>
+</div>
